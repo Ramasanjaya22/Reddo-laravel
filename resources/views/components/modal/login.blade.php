@@ -7,10 +7,10 @@
             <!--header-->
             <div class="p-5 rounded-t-xl text-center mt-5 mx-10">
                 <h3 class="text-2xl font-semibold">
-                    Log in to Serv
+                    Masuk ke Reddo
                 </h3>
                 <p class="text-gray-400 mt-1 text-sm">
-                    Enter your email & password to continue
+                Masukkan Email dan Password untuk melanjutkan
                 </p>
             </div>
 
@@ -23,7 +23,7 @@
                     <div class="mb-4">
                         <label class="block text-grey-darker text-sm mb-2" for="email">Email</label>
 
-                        <input name="email" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="email" type="text" placeholder="name@domain.com" required autofocus>
+                        <input name="email" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="email" type="text" placeholder="nama@domain.com" required autofocus>
 
                         @if ($errors->has('email'))
                             <p class="text-red-500 mb-3 text-sm">{{ $errors->first('email') }}</p>
@@ -33,7 +33,7 @@
                     <div>
                         <label class="block text-grey-darker text-sm mb-2" for="password">Password</label>
 
-                        <input name="password" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs mb-3" id="password" type="password" placeholder="At least 8 characters" required autocomplete="current-password">
+                        <input name="password" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs mb-3" id="password" type="password" placeholder="Minimal 8 karakter" required autocomplete="current-password">
 
                         @if ($errors->has('password'))
                         <p class="text-red-500 mb-3 text-sm">{{ $errors->first('password') }}</p>
@@ -48,7 +48,7 @@
                         </div>
 
                         <a class="inline-block align-baseline text-xs text-serv-button mt-2 font-medium" href="#">
-                            Forgot Password?
+                            Lupa password?
                         </a>
                     </div>
                 </div>
@@ -57,11 +57,11 @@
                 <div class="px-6 pb-6 rounded-b-xl mx-10">
                     <input type="hidden" name="auth" value="true">
 
-                    <button class="bg-serv-button text-white text-lg py-3 px-12 my-2 rounded-lg w-full" type="submit">Log in
+                    <button class="bg-serv-button text-white text-lg py-3 px-12 my-2 rounded-lg w-full" type="submit">Masuk
                     </button>
 
                     <p href="#" class="text-center py-5">
-                        Dont have account? <a href="#" class="text-serv-button" onclick="toggleModal('loginModal');toggleModal('registerModal') ">Sign up</a>
+                        Belum punya akun? <a href="#" class="text-serv-button" onclick="toggleModal('loginModal');toggleModal('registerModal') ">Daftar kuy</a>
                     </p>
                 </div>
 

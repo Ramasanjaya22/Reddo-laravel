@@ -4,7 +4,7 @@
         <div class=" mx-auto flex flex-wrap flex-row items-center justify-between">
 
             <a href="{{ route('index') }}" class="flex text-3xl font-bold items-center">
-                SERV
+            <img src="{{ asset('/assets/logo-reddo.svg') }}" alt="logo" />
             </a>
 
             <label for="menu-toggle" class="cursor-pointer lg:hidden block">
@@ -22,11 +22,11 @@
                 id="menu">
                 <nav
                     class="lg:space-x-12 space-x-0 lg:flex items-center justify-between text-base pt-8 lg:pt-0 lg:space-y-0 space-y-6">
-                    <a href="{{ route('index') }}" class="block {{ request()->is('/') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Home</a>
-                    <a href="{{ route('explore.landing') }}" class="block {{ request()->is('explore') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Explore</a>
-                    <a href="#" class="block nav-link text-serv-text">How It Works</a>
-                    <a href="#" class="block nav-link text-serv-text">Stories</a>
-                    <a href="#" class="block nav-link text-serv-text">Tips</a>
+                    <a href="{{ route('index') }}" class="block {{ request()->is('/') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Beranda</a>
+                    <a href="{{ route('explore.landing') }}" class="block {{ request()->is('explore') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Forum</a>
+                    <a href="#" class="block nav-link text-serv-text">Tentang kami</a>
+                    <!-- <a href="#" class="block nav-link text-serv-text">Stories</a>
+                    <a href="#" class="block nav-link text-serv-text">Tips</a> -->
 
                     @auth
                         <hr class="block lg:hidden">
@@ -47,13 +47,13 @@
                     <button
                         onclick="toggleModal('loginModal')"
                         class="text-serv-login-text items-center border-0 block lg:inline-block lg:py-3 lg:px-10 focus:outline-none rounded-2xl font-medium text-base mt-6 lg:mt-0">
-                        Log In
+                        Masuk
                     </button>
 
                     <button
                         onclick="toggleModal('registerModal')"
                         class="lg:bg-serv-services-bg text-serv-login-text items-center border-0 block lg:inline-block  lg:py-3 lg:px-10 focus:outline-none rounded-2xl font-medium text-base mt-6 lg:mt-0">
-                        Sign Up
+                        Daftar
                     </button>
                 </div>
             @endguest

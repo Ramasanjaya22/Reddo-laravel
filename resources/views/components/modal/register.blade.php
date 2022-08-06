@@ -6,10 +6,10 @@
             <!--header-->
             <div class="p-5 rounded-t-xl text-center mt-5 mx-10">
                 <h3 class="text-2xl font-semibold">
-                    Sign up to Serv
+                    Daftar Akun Baru
                 </h3>
                 <p class="text-gray-400 mt-1 text-sm">
-                    Join Serv and start your real project
+                Join dan mulai Tracking bacaanmu
                 </p>
             </div>
 
@@ -21,10 +21,10 @@
                 <div class="relative p-6 flex-auto mx-10">
                     <div class="mb-4">
                         <label class="block text-grey-darker text-sm mb-2" for="name">
-                            Full Name
+                            Nama Lengkap
                         </label>
 
-                        <input name="name" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="name" type="text" placeholder="Your name" required>
+                        <input name="name" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="name" type="text" placeholder="Masukkan nama kamu" required>
 
                         @if ($errors->has('name'))
                             <p class="text-red-500 mb-3 text-sm">{{ $errors->first('name') }}</p>
@@ -36,7 +36,7 @@
                             Email
                         </label>
 
-                        <input name="email" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="email" type="email" placeholder="name@domain.com" required>
+                        <input name="email" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="email" type="email" placeholder="nama@domain.com" required>
 
                         @if ($errors->has('email'))
                             <p class="text-red-500 mb-3 text-sm">{{ $errors->first('email') }}</p>
@@ -48,7 +48,7 @@
                             Password
                         </label>
 
-                        <input name="password" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs mb-3" id="password" type="password" placeholder="At least 8 characters" required>
+                        <input name="password" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs mb-3" id="password" type="password" placeholder="Minimal 8 karakter" required>
 
                         @if ($errors->has('password'))
                             <p class="text-red-500 mb-3 text-sm">{{ $errors->first('password') }}</p>
@@ -60,7 +60,7 @@
                             Confirm Password
                         </label>
 
-                        <input name="password_confirmation" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs mb-3" id="password_confirmation" type="password" placeholder="At least 8 characters" required>
+                        <input name="password_confirmation" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs mb-3" id="password_confirmation" type="password" placeholder="Minimal 8 karakter" required>
 
                         @if ($errors->has('password_confirmation'))
                             <p class="text-red-500 mb-3 text-sm">{{ $errors->first('password_confirmation') }}</p>
@@ -70,7 +70,7 @@
                     <div class="flex items-center justify-between">
                         <div class="inline-block text-xs text-gray-400">
                             <label class="inline-flex items-center mt-3">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-serv-button rounded border-serv-text"><span class="ml-2 text-gray-400">I agree to the <a href="#" class="text-serv-button">Terms & Conditions</a></span>
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-serv-button rounded border-serv-text"><span class="ml-2 text-gray-400">Saya setuju dengan <a href="#" class="text-serv-button">Syarat dan Ketentuan</a></span>
                             </label>
                         </div>
                     </div>
@@ -81,11 +81,11 @@
                     <input type="hidden" name="auth" value="true">
 
                     <button class="block text-center bg-serv-button text-white text-lg py-3 px-12 my-2 rounded-lg w-full">
-                        Sign up
+                        Daftar
                     </button>
 
                     <p href="#" class="text-center py-5">
-                        Already have account? <a href="#" class="text-serv-button" onclick="toggleModal('loginModal');toggleModal('registerModal') ">Sign in</a>
+                        Sudah punya akun? <a href="#" class="text-serv-button" onclick="toggleModal('loginModal');toggleModal('registerModal') ">Masuk</a>
                     </p>
                 </div>
             </form>

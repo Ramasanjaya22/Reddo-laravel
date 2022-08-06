@@ -1228,7 +1228,7 @@ select{
 }
 .border-serv-border{
 	--tw-border-opacity: 1;
-	border-color: rgba(22, 48, 61, var(--tw-border-opacity));
+	border-color: #593B9B;
 }
 .border-gray-300{
 	--tw-border-opacity: 1;
@@ -1259,7 +1259,7 @@ select{
 }
 .bg-serv-bg{
 	--tw-bg-opacity: 1;
-	background-color: rgba(8, 36, 49, var(--tw-bg-opacity));
+	background-color: #2b1853;
 }
 .bg-serv-services-bg{
 	--tw-bg-opacity: 1;
@@ -1267,7 +1267,7 @@ select{
 }
 .bg-serv-button{
 	--tw-bg-opacity: 1;
-	background-color: rgba(34, 176, 125, var(--tw-bg-opacity));
+	background-color: #593B9B;
 }
 .bg-serv-bg-explore{
 	--tw-bg-opacity: 1;
@@ -1566,13 +1566,16 @@ select{
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
+.text-reddo-red{
+	color:#EF2B38;
+}
 .text-serv-bg{
 	--tw-text-opacity: 1;
 	color: rgba(8, 36, 49, var(--tw-text-opacity));
 }
 .text-serv-button{
 	--tw-text-opacity: 1;
-	color: rgba(34, 176, 125, var(--tw-text-opacity));
+	color: #593B9B;
 }
 .text-gray-700{
 	--tw-text-opacity: 1;
@@ -2192,6 +2195,11 @@ body {
 	}
 	.lg\:text-left{
 		text-align: left;
+	}
+	
+	.lg\:text-4xl{
+		font-size: 2.5rem;
+		line-height: 2.75rem;
 	}
 	.lg\:text-5xl{
 		font-size: 3rem;

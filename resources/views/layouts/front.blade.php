@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="mytheme">
     <head>
 
         @include('includes.landing.meta')
 
-        <title>@yield('title') | SERV</title>
+        <title>@yield('title') | Reddo</title>
 
         @stack('before-style')
 
