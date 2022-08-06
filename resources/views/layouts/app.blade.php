@@ -4,7 +4,7 @@
 
         @include('includes.dashboard.meta')
 
-        <title>@yield('title') | SERV</title>
+        <title>@yield('title') | Reddo</title>
 
         @stack('before-style')
 

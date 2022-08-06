@@ -131,7 +131,7 @@
                         <a href="#" class="text-serv-text">Updates</a>
                     </span> -->
                     <span class="sm:flex block">
-                        <a href="#" class="text-serv-text">Contact us</a>
+                        <a href="https://wa.link/vizf4y" class="text-serv-text">Contact us</a>
                     </span>
                 </div>
                 </p>

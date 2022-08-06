@@ -3,7 +3,7 @@
     <div class="text-serv-bg">
 
         <div class="" href="#">
-            <img src="{{ asset('/assets/images/logo.svg') }}" alt="" class="object-center mx-auto my-8 ">
+            <img src="{{ asset('/assets/logo-reddo.svg') }}" alt="" class="object-center mx-auto my-8 ">
         </div>
 
         <div class="flex items-center pt-8 pl-5 space-x-2 border-t border-gray-100">
@@ -77,7 +77,7 @@
                         <rect x="14" y="3" width="7" height="7" rx="2" fill="#082431" />
                         <rect x="14" y="14" width="7" height="7" rx="2" fill="#082431" />
                     </svg> -->
-                    <span class="ml-4">My Services</span>
+                    <span class="ml-4">Papan Peringkat</span>
                     <span class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">
                         {{ auth()->user()->service()->count() }}
                     </span>
@@ -110,7 +110,7 @@
                         <rect x="11" y="7" width="2" height="10" rx="1" fill="white" />
                         <rect x="17" y="11" width="2" height="10" rx="1" transform="rotate(90 17 11)" fill="white" />
                     </svg> -->
-                    <span class="ml-4">My Request</span>
+                    <span class="ml-4">Koleksi Buku</span>
                     <span class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">
                         {{ auth()->user()->order_buyer()->count() }}
                     </span>
@@ -145,7 +145,7 @@
                         <line x1="7.75" y1="11.25" x2="16.25" y2="11.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
                         <line x1="7.75" y1="15.25" x2="16.25" y2="15.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
                     </svg> -->
-                    <span class="ml-4">My Orders</span>
+                    <span class="ml-4">Pengingat</span>
                     <span class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">
                         {{ auth()->user()->order_freelancer()->count() }}
                     </span>

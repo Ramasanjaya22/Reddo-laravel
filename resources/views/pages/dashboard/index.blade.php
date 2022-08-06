@@ -9,10 +9,10 @@
             <div class="grid w-full gap-5 px-10 mx-auto md:grid-cols-12">
                 <div class="col-span-8">
                     <h2 class="mt-8 mb-1 text-2xl font-semibold text-gray-700">
-                        Overviews
+                        Selamat Datang!
                     </h2>
                     <p class="text-sm text-gray-400">
-                        Monthly Reports
+                    Today is a Reader, Tomorrow is a Winner 
                     </p>
                 </div>
 
@@ -43,36 +43,36 @@
                         <div class="flex flex-col justify-center px-4 py-4 mb-4 bg-white rounded-xl">
                             <div>
                                 <div>
-                                    <img src="{{ asset('/assets/images/services-progress-icon.svg') }}" alt="" class="w-8 h-8">
+                                    <img src="{{ asset('/assets/images/leaderboard-gold-icon.svg') }}" alt="" class="w-8 h-8">
                                 </div>
                                 <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $progress ?? '' }}</p>
                                 <p class="text-sm text-left text-gray-500">
-                                    Services <br class="hidden lg:block">
-                                    On Progress
+                                    Terbaik <br class="hidden lg:block">
+                                    di papan peringkat
                                 </p>
                             </div>
                         </div>
                         <div class="flex flex-col justify-center px-4 py-4 mb-4 bg-white rounded-xl">
                             <div>
                                 <div>
-                                    <img src="{{ asset('/assets/images/services-completed-icon.svg') }}" alt="" class="w-8 h-8">
+                                    <img src="{{ asset('/assets/images/book-year-challange-icon.svg') }}" alt="" class="w-8 h-8">
                                 </div>
                                 <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $completed ?? '' }}</p>
                                 <p class="text-sm text-left text-gray-500">
-                                    Services <br class="hidden lg:block">
-                                    Completed
+                                    Books Year <br class="hidden lg:block">
+                                    Challange 2022
                                 </p>
                             </div>
                         </div>
                         <div class="flex flex-col justify-center px-4 py-4 mb-4 bg-white rounded-xl">
                             <div>
                                 <div>
-                                    <img src="{{ asset('/assets/images/new-freelancer-icon.svg') }}" alt="" class="w-8 h-8">
+                                    <img src="{{ asset('/assets/images/charm_trophy-icon.svg') }}" alt="" class="w-8 h-8">
                                 </div>
                                 <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $freelancer ?? '' }}</p>
                                 <p class="text-sm text-left text-gray-500">
-                                    New Freelancer <br class="hidden lg:block">
-                                    Work for You
+                                Achievement <br class="hidden lg:block">
+                                    Yang sudah terbuka
                                 </p>
                             </div>
                         </div>
