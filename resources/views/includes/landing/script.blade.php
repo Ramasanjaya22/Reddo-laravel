@@ -10,15 +10,15 @@
 <script src="{{ asset('/js/toggleModal.js') }}"></script>
 
 <script>
-    $(document).ready(function() {
-        $(".modal").on('click', ':not(.relative)', function (e) {
-            e.stopPropagation();
-        });
-        $("#loginModal").on('click', function (e) {
-            toggleModal('loginModal');
-        });
-        $("#registerModal").on('click', function (e) {
-            toggleModal('registerModal');
-        });
+$(document).ready(function() {
+    $(".modal").on('click', ':not(.relative)', function(e) {
+        e.stopPropagation();
     });
+    $("#loginModal").on('click', function(e) {
+        toggleModal('loginModal');
+    });
+    $("#registerModal").on('click', function(e) {
+        toggleModal('registerModal');
+    });
+});
 </script>

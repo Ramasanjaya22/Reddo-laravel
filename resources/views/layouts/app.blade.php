@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html x-data="data()" lang="en">
-    <head>
 
-        @include('includes.dashboard.meta')
+<head>
 
-        <title>@yield('title') | Reddo</title>
+    @include('includes.dashboard.meta')
 
-        @stack('before-style')
+    <title>@yield('title') | Reddo</title>
 
-        @include('includes.dashboard.style')
+    @stack('before-style')
 
-        @stack('after-style')
+    @include('includes.dashboard.style')
 
-    </head>
-    <body class="antialiased">
-        <div class="flex h-screen bg-serv-services-bg" :class="{ 'overflow-hidden': isSideMenuOpen }">
+    @stack('after-style')
 
-            @include('components.dashboard.desktop')
+</head>
 
-            <div x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 flex items-end bg-black bg-opacity-50 z-1 sm:items-center sm:justify-center"></div>
+<body class="antialiased">
+    <div class="flex h-screen bg-serv-services-bg" :class="{ 'overflow-hidden': isSideMenuOpen }">
 
-                @include('components.dashboard.mobile')
+        @include('components.dashboard.desktop')
 
-            <div class="flex flex-col flex-1 w-full">
-                @include('components.dashboard.header')
+        <div x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="fixed inset-0 flex items-end bg-black bg-opacity-50 z-1 sm:items-center sm:justify-center"></div>
 
-                @include('sweetalert::alert')
+        @include('components.dashboard.mobile')
 
-                @yield('content')
-            </div>
+        <div class="flex flex-col flex-1 w-full">
+            @include('components.dashboard.header')
 
+            @include('sweetalert::alert')
+
+            @yield('content')
         </div>
 
-        @stack('before-script')
+    </div>
 
-        @include('includes.dashboard.script')
+    @stack('before-script')
 
-        @stack('after-script')
-    </body>
+    @include('includes.dashboard.script')
+
+    @stack('after-script')
+
+    {{-- modals --}}
+    @include('components.modal.pomodoro-timer')
+</body>
+
 </html>
