@@ -14,10 +14,8 @@ class CreateUserThemesTable extends Migration
     public function up()
     {
         Schema::create('user_themes', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned();
-            $table->integer('theme_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('theme_id')->references('id')->on('themes')->onDelete('cascade');
+            $table->foreignId('user_id');
+            $table->foreignId('theme_id');
         });
     }
 

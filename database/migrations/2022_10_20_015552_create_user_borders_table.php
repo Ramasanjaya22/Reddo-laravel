@@ -14,10 +14,8 @@ class CreateUserBordersTable extends Migration
     public function up()
     {
         Schema::create('user_borders', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned();
-            $table->integer('border_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('border_id')->references('id')->on('borders')->onDelete('cascade');
+            $table->foreignId('user_id');
+            $table->foreignId('border_id');
         });
     }
 

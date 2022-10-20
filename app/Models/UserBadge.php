@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserThemes extends Model
+class UserBadge extends Model
 {
     use HasFactory;
 }
