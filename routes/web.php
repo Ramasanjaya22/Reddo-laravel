@@ -23,6 +23,7 @@ use App\Http\Controllers\Dashboard\ProfileController;
 |
 */
 
+Route::get('about', [LandingController::class, 'about'])->name('about.landing');
 Route::get('forum', [LandingController::class, 'forum'])->name('forum.landing');
 Route::resource('/', LandingController::class);
 

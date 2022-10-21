@@ -104,4 +104,9 @@ class LandingController extends Controller
         return view('pages.landing.forum');
     }
 
+    public function about()
+    {
+        return view('pages.landing.about');
+    }
+
 }

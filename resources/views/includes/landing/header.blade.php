@@ -24,7 +24,7 @@
                     class="lg:space-x-12 space-x-0 lg:flex items-center justify-between text-base pt-8 lg:pt-0 lg:space-y-0 space-y-6">
                     <a href="{{ route('index') }}" class="block {{ request()->is('/') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Beranda</a>
                     <a href="{{ route('forum.landing') }}" class="block {{ request()->is('forum') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Forum</a>
-                    <a href="#" class="block nav-link text-serv-text">Tentang kami</a>
+                    <a href="{{ route('about.landing') }}" class="block nav-link text-serv-text">Tentang kami</a>
                     <!-- <a href="#" class="block nav-link text-serv-text">Stories</a>
                     <a href="#" class="block nav-link text-serv-text">Tips</a> -->
 
