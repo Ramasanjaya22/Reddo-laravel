@@ -14,7 +14,7 @@
                     <h1
                         class="lg:leading-normal sm:text-3xl lg:text-4xl text-2xl mb-5 font-bold lg:mt-16 ">
                         Build Your Reading Habbit <br class="lg:block hidden">
-                        and become a Good 
+                        and become a Good
                         <br class="lg:block hidden">
                         Reader with <span class="text-reddo-red">Reddo!</span>
                     </h1>
@@ -58,28 +58,7 @@
         </div>
     </div>
 
-    {{-- content --}}
-    <div class="content">
-        <!-- services -->
-        <div class="bg-serv-services-bg overflow-hidden">
-            <div class="pt-16 pb-16 lg:pb-20 lg:pl-24 md:pl-16 sm:pl-8 pl-8 mx-auto">
-                <div class="flex flex-col w-full">
-                    <h2 class="sm:text-2xl text-xl tracking-wider font-semibold mb-5 text-medium-black">
-                        Featured Services</h2>
-                </div>
-                <div class="flex overflow-x-scroll pb-10 hide-scroll-bar dragscroll -mx-3">
-                    <div class="flex flex-nowrap">
-                        @forelse ($services as $item)
-                            @include('components.landing.service')
-                        @empty
-                            {{-- empty --}}
-                        @endforelse
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
+    <div>
         <!-- call to action -->
         <div class="py-10 lg:py-24 flex lg:flex-row flex-col items-centercta-bg">
             <!-- Left Column -->
@@ -100,7 +79,7 @@
                     your projects.
                 </p>
                 <a
-                    href="explore.php"
+                    href="about"
                     class="bg-serv-button px-10 py-4 text-base text-white font-semibold rounded-xl cursor-pointer focus:outline-none tracking-wide">
                     Learn More
                 </a>
