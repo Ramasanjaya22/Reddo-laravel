@@ -46,4 +46,8 @@ class User extends Model
     public function comment() {
         return $this->hasMany(Comment::class);
     }
+
+    public function reviewComment() {
+        return $this->hasMany(ReviewComment::class);
+    }
 }
