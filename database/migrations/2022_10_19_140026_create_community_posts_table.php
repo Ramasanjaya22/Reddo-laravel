@@ -17,6 +17,7 @@ class CreateCommunityPostsTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('title');
+            $table->bigInteger('like');
             $table->text('description');
             $table->timestamps();
         });

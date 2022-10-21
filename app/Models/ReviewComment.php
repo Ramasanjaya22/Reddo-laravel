@@ -5,17 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FinishedBook extends Model
+class ReviewComment extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    public function review() {
+        return $this->belongsTo(Review::class);
+    }
 
     public function user() {
         return $this->belongsTo(User::class);
-    }
-
-    public function review() {
-        return $this->hasOne(Review::class);
     }
 }
