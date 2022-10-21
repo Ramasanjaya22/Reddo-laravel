@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Character extends Model
+class DetailUser extends Model
 {
     use SoftDeletes;
 
-    public $table = 'characters';
+    public $table = 'detail_user';
 
     protected $dates = [
         'updated_at',
@@ -20,15 +20,19 @@ class Character extends Model
 
     protected $fillable = [
         'users_id',
-        'point',
-        'level',
-        'xp',
+        'photo',
+        'role',
+        'contact_number',
+        'biography',
         'updated_at',
         'created_at',
         'deleted_at',
     ];
 
-    public function user() {
-        return $this->belongsTo(User::class);
+
+    // one to one
+    public function user()
+    {
+        return $this->belongsTo('App/Models/User', 'users_id', 'id');
     }
 }
