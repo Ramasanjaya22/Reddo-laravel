@@ -1,3 +1,4 @@
+{{-- @dd($characters->all()[0]->user()) --}}
 @extends('layouts.app')
 
 @section('title', 'Leaderboard')
@@ -33,16 +34,16 @@
                             <table class="w-full" aria-label="Table">
                                 {{-- <tbody class="bg-white"> --}}
 
-                                    @for ($i = 1; $i <= count($characters); $i++)
+                                    @for ($i = 0; $i < count($characters); $i++)
                                         <tr class="text-gray-700 border-b">
                                             <td class="w-2/6 px-1 py-5">
                                                 <div class="flex items-center text-sm">
-                                                    <img src="{{ URL('assets/rank/'.$crowns[0][$i-1]) }}" alt="">
+                                                    <img src="{{ URL('assets/rank/'.$crowns[0][$i]) }}" alt="">
                                                 </div>
                                             </td>
                                             <td class="px-1 py-5 text-sm">
-                                                @if ($characters->find($i)->user->detailUser->photo != NULL)
-                                                <img src="{{ url($characters->find($i)->user->detailUser->photo) }}" alt="photo profile" class="w-16 h-16 rounded-full">
+                                                @if ($characters->all()[$i]->user->detailUser->photo != NULL)
+                                                <img src="{{ url($characters->all()[$i]->user->detailUser->photo) }}" alt="photo profile" class="w-16 h-16 rounded-full">
                                             @else
                                                 <span class="inline-block w-16 h-16 overflow-hidden bg-gray-100 rounded-full">
                                                     <svg class="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
@@ -50,14 +51,14 @@
                                                     </svg>
                                                 </span>
                                             @endif
-                                                {{-- <img src="{{ $characters->find($i)->user->detailUser->photo ?? '' }}" alt=""> --}}
+                                                {{-- <img src="{{ $characters->all()[$i]->user->detailUser->photo ?? '' }}" alt=""> --}}
                                             </td>
                                             <td class="px-1 py-5 text-sm">
-                                                <h4>{{ $characters->find($i)->user->name ?? '' }}</h4>
-                                                <b>lv. {{ $characters->find($i)->level ?? '' }}</b>
+                                                <h4>{{ $characters->all()[$i]->user->name ?? '' }}</h4>
+                                                <b>lv. {{ $characters->all()[$i]->level ?? '' }}</b>
                                             </td>
                                             <td class="px-1 py-5 text-sm text-green-500 text-md">
-                                                <h1><b>{{ $i }}</b></h1>
+                                                <h1><b>{{ $i+1 }}</b></h1>
                                             </td>
                                         </tr>
                                     @endfor
