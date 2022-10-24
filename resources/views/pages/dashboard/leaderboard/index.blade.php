@@ -33,25 +33,25 @@
                             <table class="w-full" aria-label="Table">
                                 {{-- <tbody class="bg-white"> --}}
 
-                                    @foreach ($characters as $char)
+                                    @for ($i = 1; $i <= count($characters); $i++)
                                         <tr class="text-gray-700 border-b">
                                             <td class="w-2/6 px-1 py-5">
                                                 <div class="flex items-center text-sm">
-                                                    {{ "crown" }}
+                                                    {{ route('member.get.crown', $i) }}
                                                 </div>
                                             </td>
                                             <td class="px-1 py-5 text-sm">
-                                                <img src="{{ $char->user->detailUser->photo ?? '' }}" alt="">
+                                                <img src="{{ $characters->find($i)->user->detailUser->photo ?? '' }}" alt="">
                                             </td>
                                             <td class="px-1 py-5 text-sm">
-                                                <h4>{{ $char->user->name ?? '' }}</h4>
-                                                <b>lv. {{ $char->level ?? '' }}</b>
+                                                <h4>{{ $characters->find($i)->user->name ?? '' }}</h4>
+                                                <b>lv. {{ $characters->find($i)->level ?? '' }}</b>
                                             </td>
                                             <td class="px-1 py-5 text-sm text-green-500 text-md">
-                                                <h1>{{ 1 }}</h1>
+                                                <h1>{{ $i }}</h1>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @endfor
 
                                 {{-- </tbody> --}}
                             </table>

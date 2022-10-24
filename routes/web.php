@@ -34,6 +34,9 @@ Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sa
 
     // leaderboard
     Route::resource('leaderboard', LeaderboardController::class);
+    Route::controller(LeaderboardController::class)->group(function() {
+        Route::get('/leaderboard/get_crown/{rank}', 'getCrown')->name('get.crown');
+    });
 
     // book collections
     Route::resource('books', BooksController::class);
