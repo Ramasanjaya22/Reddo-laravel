@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use File;
-use Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
 use Alert;
 
 use App\Models\User;
@@ -36,11 +36,11 @@ class ProfileController extends Controller
     public function index()
     {
         $user = User::where('id', Auth::user()->id)->first();
-        $experience_user = ExperienceUser::where('detail_user_id', $user->detail_user->id)
-                                        ->orderBy('id', 'asc')
-                                        ->get();
+        // $experience_user = ExperienceUser::where('detail_user_id', $user->detail_user->id)
+        //                                 ->orderBy('id', 'asc')
+        //                                 ->get();
 
-        return view('pages.dashboard.profile', compact('user', 'experience_user'));
+        return view('pages.dashboard.profile', compact('user'));
     }
 
     /**
@@ -122,33 +122,33 @@ class ProfileController extends Controller
         $user = User::find(Auth::user()->id);
         $user->update($data_profile);
 
-        // ptoses save to detail user
-        $detail_user = DetailUser::find($user->detail_user->id);
-        $detail_user->update($data_detail_user);
+        // proses save to detail user
+        $detailUser = DetailUser::find($user->detailUser->id);
+        $detailUser->update($data_detail_user);
 
-        // proses save to experience
-        $experience_user_id = ExperienceUser::where('detail_user_id', $detail_user['id'])->first();
-        if(isset($experience_user_id)){
+        // // proses save to experience
+        // $experience_user_id = ExperienceUser::where('detail_user_id', $detail_user['id'])->first();
+        // if(isset($experience_user_id)){
 
-            foreach ($data_profile['experience'] as $key => $value) {
-                $experience_user = ExperienceUser::find($key);
-                $experience_user->detail_user_id = $detail_user['id'];
-                $experience_user->experience = $value;
-                $experience_user->save();
-            }
+        //     foreach ($data_profile['experience'] as $key => $value) {
+        //         $experience_user = ExperienceUser::find($key);
+        //         $experience_user->detail_user_id = $detail_user['id'];
+        //         $experience_user->experience = $value;
+        //         $experience_user->save();
+        //     }
 
-        }else{
+        // }else{
 
-            foreach ($data_profile['experience'] as $key => $value) {
-                if(isset($value)){
-                    $experience_user = new ExperienceUser;
-                    $experience_user->detail_user_id = $detail_user['id'];
-                    $experience_user->experience = $value;
-                    $experience_user->save();
-                }
-            }
+        //     foreach ($data_profile['experience'] as $key => $value) {
+        //         if(isset($value)){
+        //             $experience_user = new ExperienceUser;
+        //             $experience_user->detail_user_id = $detail_user['id'];
+        //             $experience_user->experience = $value;
+        //             $experience_user->save();
+        //         }
+        //     }
 
-        }
+        // }
 
         toast()->success('Update has been success');
         return back();

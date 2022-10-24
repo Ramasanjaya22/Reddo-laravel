@@ -37,18 +37,27 @@
                                         <tr class="text-gray-700 border-b">
                                             <td class="w-2/6 px-1 py-5">
                                                 <div class="flex items-center text-sm">
-                                                    {{ route('member.get.crown', $i) }}
+                                                    <img src="{{ URL('assets/rank/'.$crowns[0][$i-1]) }}" alt="">
                                                 </div>
                                             </td>
                                             <td class="px-1 py-5 text-sm">
-                                                <img src="{{ $characters->find($i)->user->detailUser->photo ?? '' }}" alt="">
+                                                @if ($characters->find($i)->user->detailUser->photo != NULL)
+                                                <img src="{{ url($characters->find($i)->user->detailUser->photo) }}" alt="photo profile" class="w-16 h-16 rounded-full">
+                                            @else
+                                                <span class="inline-block w-16 h-16 overflow-hidden bg-gray-100 rounded-full">
+                                                    <svg class="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                    </svg>
+                                                </span>
+                                            @endif
+                                                {{-- <img src="{{ $characters->find($i)->user->detailUser->photo ?? '' }}" alt=""> --}}
                                             </td>
                                             <td class="px-1 py-5 text-sm">
                                                 <h4>{{ $characters->find($i)->user->name ?? '' }}</h4>
                                                 <b>lv. {{ $characters->find($i)->level ?? '' }}</b>
                                             </td>
                                             <td class="px-1 py-5 text-sm text-green-500 text-md">
-                                                <h1>{{ $i }}</h1>
+                                                <h1><b>{{ $i }}</b></h1>
                                             </td>
                                         </tr>
                                     @endfor
