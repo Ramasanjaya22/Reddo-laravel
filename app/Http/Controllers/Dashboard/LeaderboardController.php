@@ -32,7 +32,7 @@ class LeaderboardController extends Controller
     public function index()
     {
         $characters = Character::orderBy('level', 'desc')->get();
-        $crowns[] = ['gold-crown.png', 'silver', 'bronze'];
+        $crowns[] = ['gold-crown.png', 'silver-crown.png', 'bronze-crown.png'];
 
         return view('pages.dashboard.leaderboard.index', ['characters' => $characters, 'crowns' => $crowns]);
     }
