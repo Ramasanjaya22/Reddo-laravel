@@ -1,4 +1,4 @@
-{{-- @dd($characters->all()[0]->user()) --}}
+{{-- @dd($characters->all()[0]->user->detailUser->photo) --}}
 @extends('layouts.app')
 
 @section('title', 'Leaderboard')
@@ -43,7 +43,7 @@
                                             </td>
                                             <td class="px-1 py-5 text-sm">
                                                 @if ($characters->all()[$i]->user->detailUser->photo != NULL)
-                                                <img src="{{ url($characters->all()[$i]->user->detailUser->photo) }}" alt="photo profile" class="w-16 h-16 rounded-full">
+                                                <img src="{{ url(Storage::url($characters->all()[$i]->user->detailUser->photo)) }}" alt="photo profile" class="w-16 h-16 rounded-full">
                                             @else
                                                 <span class="inline-block w-16 h-16 overflow-hidden bg-gray-100 rounded-full">
                                                     <svg class="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
