@@ -3,18 +3,21 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-class User extends Model
+class User extends Authenticatable
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
 
     protected $guarded = ['id'];
 
     protected $hidden = ['password', 'remember_token'];
 
     public function character() {
-        return $this->hasOne(Character::class);
+        return $this->hasOne("App\Models\Character", 'users_id', 'id');
     }
 
     public function finishedBook() {
@@ -49,5 +52,9 @@ class User extends Model
 
     public function reviewComment() {
         return $this->hasMany(ReviewComment::class);
+    }
+
+    public function detailUser() {
+        return $this->hasOne(DetailUser::class, 'users_id', 'id');
     }
 }

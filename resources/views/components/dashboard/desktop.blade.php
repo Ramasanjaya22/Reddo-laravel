@@ -9,8 +9,8 @@
         <div class="flex items-center pt-8 pl-5 space-x-2 border-t border-gray-100">
 
             {{-- validation photo --}}
-            @if(auth()->user()->detail_user()->first()->photo != null)
-                <img class="object-cover object-center mr-1 rounded-full w-14 h-14" src="{{ url(Storage::url(auth()->user()->detail_user()->first()->photo)) }}" alt="" loading="lazy" />
+            @if(auth()->user()->detailUser()->first()->photo != null)
+                <img class="object-cover object-center mr-1 rounded-full w-14 h-14" src="{{ url(Storage::url(auth()->user()->detailUser()->first()->photo)) }}" alt="" loading="lazy" />
             @else
                 <svg class="object-cover object-center mr-1 rounded-full w-14 h-14 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -21,7 +21,7 @@
                 <!--Author name-->
                 <p class="font-semibold text-gray-900 text-md">{{ Auth::user()->name ?? '' }}</p>
                 <p class="text-sm font-light text-serv-text">
-                    {{ auth()->user()->detail_user()->first()->role ?? '' }}
+                    {{ auth()->user()->detailUser()->first()->role ?? '' }}
                 </p>
             </div>
         </div>
@@ -53,17 +53,17 @@
             <li class="relative px-6 py-3">
 
                 @if (
-                    request()->is('member/service') ||
-                    request()->is('member/service/*') ||
-                    request()->is('member/*/service') ||
-                    request()->is('member/*/service/*')
+                    request()->is('member/leaderboard') ||
+                    request()->is('member/leaderboard/*') ||
+                    request()->is('member/*/leaderboard') ||
+                    request()->is('member/*/leaderboard/*')
                 )
 
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg" aria-hidden="true"></span>
 
                 @endif
 
-                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800" href="{{ route('member.service.index') }}">
+                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800" href="{{ route('member.leaderboard.index') }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="3" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
@@ -79,7 +79,8 @@
                     </svg> -->
                     <span class="ml-4">Papan Peringkat</span>
                     <span class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">
-                        {{ auth()->user()->service()->count() }}
+                        {{-- {{ auth()->user()->character()->count() }} --}}
+                        {{ "5" }}
                     </span>
 
                 </a>
@@ -88,17 +89,17 @@
             <li class="relative px-6 py-3">
 
                 @if (
-                    request()->is('member/request') ||
-                    request()->is('member/request/*') ||
-                    request()->is('member/*/request') ||
-                    request()->is('member/*/request/*')
+                    request()->is('member/books') ||
+                    request()->is('member/books/*') ||
+                    request()->is('member/*/books') ||
+                    request()->is('member/*/books/*')
                 )
 
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg" aria-hidden="true"></span>
 
                 @endif
 
-                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800" href="{{ route('member.request.index') }}">
+                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800" href="{{ route('member.books.index') }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2.25" y="1.25" width="19.5" height="21.5" rx="4.75" stroke="#082431" stroke-width="1.5" />
                         <rect x="11.3" y="7" width="1.4" height="10" rx="0.7" fill="#082431" />
@@ -112,7 +113,7 @@
                     </svg> -->
                     <span class="ml-4">Koleksi Buku</span>
                     <span class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">
-                        {{ auth()->user()->order_buyer()->count() }}
+                        {{ "5" }}
                     </span>
 
                 </a>
@@ -121,17 +122,17 @@
             <li class="relative px-6 py-3">
 
                 @if (
-                    request()->is('member/order') ||
-                    request()->is('member/order/*') ||
-                    request()->is('member/*/order') ||
-                    request()->is('member/*/order/*')
+                    request()->is('member/reminder') ||
+                    request()->is('member/reminder/*') ||
+                    request()->is('member/*/reminder') ||
+                    request()->is('member/*/reminder/*')
                 )
 
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg" aria-hidden="true"></span>
 
                 @endif
 
-                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800" href="{{ route('member.order.index') }}">
+                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800" href="{{ route('member.reminder.index') }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3.25" y="2.25" width="17.5" height="19.5" rx="4.75" stroke="#082431" stroke-width="1.5" />
                         <line x1="7.75" y1="7.25" x2="10.25" y2="7.25" stroke="#082431" stroke-width="1.5" stroke-linecap="round" />
@@ -147,7 +148,7 @@
                     </svg> -->
                     <span class="ml-4">Pengingat</span>
                     <span class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">
-                        {{ auth()->user()->order_freelancer()->count() }}
+                        {{ "5" }}
                     </span>
 
                 </a>

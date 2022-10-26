@@ -66,8 +66,8 @@
                         Halo, {{ Auth::user()->name; }}
 
                         {{-- validation photo --}}
-                        @if(auth()->user()->detail_user()->first()->photo != null)
-                            <img class="inline ml-3 h-12 w-12 rounded-full" src="{{ url(Storage::url(auth()->user()->detail_user()->first()->photo)) }}" alt="" loading="lazy" />
+                        @if(auth()->user()->detailUser()->first()->photo != null)
+                            <img class="inline ml-3 h-12 w-12 rounded-full" src="{{ url(Storage::url(auth()->user()->detailUser()->first()->photo)) }}" alt="" loading="lazy" />
                         @else
                             <svg class="inline ml-3 h-12 w-12 rounded-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />

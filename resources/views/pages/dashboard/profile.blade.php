@@ -35,8 +35,8 @@
 
                                             <div class="flex items-center mt-1">
 
-                                                @if (auth()->user()->detail_user()->first()->photo != NULL)
-                                                    <img src="{{ url(Storage::url(auth()->user()->detail_user()->first()->photo)) }}" alt="photo profile" class="w-16 h-16 rounded-full">
+                                                @if (auth()->user()->detailUser()->first()->photo != NULL)
+                                                    <img src="{{ url(Storage::url(auth()->user()->detailUser()->first()->photo)) }}" alt="photo profile" class="w-16 h-16 rounded-full">
                                                 @else
                                                     <span class="inline-block w-16 h-16 overflow-hidden bg-gray-100 rounded-full">
                                                         <svg class="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
@@ -71,12 +71,12 @@
                                         </div>
 
                                         <div class="md:col-span-6 lg:col-span-3">
-                                            <label for="role" class="block mb-3 font-medium text-gray-700 text-md">Role</label>
+                                            <label for="highlight" class="block mb-3 font-medium text-gray-700 text-md">Highlight</label>
 
-                                            <input placeholder="your role" type="text" name="role" id="role" autocomplete="role" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ $user->detail_user->role ?? '' }}" required>
+                                            <input placeholder="your highlight" type="text" name="highlight" id="highlight" autocomplete="highlight" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ $user->detailUser->highlight ?? '' }}" required>
 
-                                            @if ($errors->has('role'))
-                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('role') }}</p>
+                                            @if ($errors->has('highlight'))
+                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('highlight') }}</p>
                                             @endif
                                         </div>
 
@@ -93,7 +93,7 @@
                                         <div class="md:col-span-6 lg:col-span-3">
                                             <label for="contact_number" class="block mb-3 font-medium text-gray-700 text-md">Contact Number</label>
 
-                                            <input placeholder="your contact number" type="number" name="contact_number" id="contact_number" autocomplete="contact_number" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ $user->detail_user->contact_number ?? '' }}" required>
+                                            <input placeholder="your contact number" type="number" name="contact_number" id="contact_number" autocomplete="contact_number" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ $user->detailUser->contact_number ?? '' }}" required>
 
                                             @if ($errors->has('contact_number'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('contact_number') }}</p>
@@ -103,14 +103,14 @@
                                         <div class="col-span-6">
                                             <label for="biography" class="block mb-3 font-medium text-gray-700 text-md">Biografi</label>
 
-                                            <textarea placeholder="Enter your biography here.." type="text" name="biography" id="biography" autocomplete="biography" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" rows="4">{{ $user->detail_user->biography ?? '' }}</textarea>
+                                            <textarea placeholder="Enter your biography here.." type="text" name="biography" id="biography" autocomplete="biography" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" rows="4">{{ $user->detailUser->biography ?? '' }}</textarea>
 
                                             @if ($errors->has('biography'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('biography') }}</p>
                                             @endif
                                         </div>
 
-                                        <div class="col-span-6">
+                                        {{-- <div class="col-span-6">
                                             <label for="experience" class="block mb-3 font-medium text-gray-700 text-md">My Experience</label>
 
                                             @forelse ($experience_user as $key => $item)
@@ -139,7 +139,7 @@
                                                 @endif
                                             @endforelse
 
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
 
