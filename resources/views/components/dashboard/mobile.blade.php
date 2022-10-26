@@ -47,17 +47,17 @@
             <li class="relative px-6 py-3">
 
                 @if (
-                    request()->is('member/service') ||
-                    request()->is('member/service/*') ||
-                    request()->is('member/*/service') ||
-                    request()->is('member/*/service/*')
+                    request()->is('member/leaderboard') ||
+                    request()->is('member/leaderboard/*') ||
+                    request()->is('member/*/leaderboard') ||
+                    request()->is('member/*/leaderboard/*')
                 )
 
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg" aria-hidden="true"></span>
 
                 @endif
 
-                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800" href="{{ route('member.service.index') }}">
+                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800" href="{{ route('member.leaderboard.index') }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="3" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
@@ -80,17 +80,17 @@
             <li class="relative px-6 py-3">
 
                 @if (
-                    request()->is('member/request') ||
-                    request()->is('member/request/*') ||
-                    request()->is('member/*/request') ||
-                    request()->is('member/*/request/*')
+                    request()->is('member/books') ||
+                    request()->is('member/books/*') ||
+                    request()->is('member/*/books') ||
+                    request()->is('member/*/books/*')
                 )
 
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg" aria-hidden="true"></span>
 
                 @endif
 
-                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800" href="{{ route('member.request.index') }}">
+                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800" href="{{ route('member.books.index') }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2.25" y="1.25" width="19.5" height="21.5" rx="4.75" stroke="#082431" stroke-width="1.5" />
                         <rect x="11.3" y="7" width="1.4" height="10" rx="0.7" fill="#082431" />
@@ -111,17 +111,17 @@
             <li class="relative px-6 py-3">
 
                 @if (
-                    request()->is('member/order') ||
-                    request()->is('member/order/*') ||
-                    request()->is('member/*/order') ||
-                    request()->is('member/*/order/*')
+                    request()->is('member/reminder') ||
+                    request()->is('member/reminder/*') ||
+                    request()->is('member/*/reminder') ||
+                    request()->is('member/*/reminder/*')
                 )
 
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg" aria-hidden="true"></span>
 
                 @endif
 
-                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800" href="{{ route('member.order.index') }}">
+                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800" href="{{ route('member.reminder.index') }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3.25" y="2.25" width="17.5" height="19.5" rx="4.75" stroke="#082431" stroke-width="1.5" />
                         <line x1="7.75" y1="7.25" x2="10.25" y2="7.25" stroke="#082431" stroke-width="1.5" stroke-linecap="round" />

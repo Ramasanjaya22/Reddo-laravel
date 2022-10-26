@@ -7,9 +7,9 @@ use App\Http\Controllers\Landing\LandingController;
 
 // member ( dashboard )
 use App\Http\Controllers\Dashboard\MemberController;
-use App\Http\Controllers\Dashboard\ServiceController;
-use App\Http\Controllers\Dashboard\RequestController;
-use App\Http\Controllers\Dashboard\MyOrderController;
+use App\Http\Controllers\Dashboard\LeaderboardController;
+use App\Http\Controllers\Dashboard\BooksController;
+use App\Http\Controllers\Dashboard\ReminderController;
 use App\Http\Controllers\Dashboard\ProfileController;
 
 /*
@@ -32,17 +32,17 @@ Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sa
     // dashboard
     Route::resource('dashboard', MemberController::class);
 
-    // service
-    Route::resource('service', ServiceController::class);
+    // leaderboard
+    Route::resource('leaderboard', LeaderboardController::class);
 
-    // request
-    Route::get('approve_request/{id}', [RequestController::class, 'approve'])->name('approve.request');
-    Route::resource('request', RequestController::class);
+    // book collections
+    Route::resource('books', BooksController::class);
 
-    // my order
-    Route::get('accept/order/{id}', [MyOrderController::class, 'accepted'])->name('accept.order');
-    Route::get('reject/order/{id}', [MyOrderController::class, 'rejected'])->name('reject.order');
-    Route::resource('order', MyOrderController::class);
+    // reminder
+    Route::resource('reminder', ReminderController::class);
+    // Route::get('accept/order/{id}', [MyOrderController::class, 'accepted'])->name('accept.order');
+    // Route::get('reject/order/{id}', [MyOrderController::class, 'rejected'])->name('reject.order');
+    // Route::resource('order', MyOrderController::class);
 
     // profile
     Route::get('delete_photo', [ProfileController::class, 'delete'])->name('delete.photo.profile');

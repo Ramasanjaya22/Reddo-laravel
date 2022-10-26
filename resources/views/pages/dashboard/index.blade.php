@@ -12,7 +12,7 @@
                         Selamat Datang!
                     </h2>
                     <p class="text-sm text-gray-400">
-                    Today is a Reader, Tomorrow is a Winner 
+                    Today is a Reader, Tomorrow is a Winner
                     </p>
                 </div>
 
@@ -20,8 +20,8 @@
                     <div @click.away="open = false" class="relative z-10 hidden mt-5 lg:block" x-data="{ open: false }">
                         <button class="flex flex-row items-center w-full px-4 py-2 mt-2 text-left bg-white rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4">
 
-                        @if (auth()->user()->detail_user()->first()->photo != NULL)
-                            <img src="{{ url(Storage::url(auth()->user()->detail_user()->first()->photo)) }}" alt="photo profile" class="inline w-12 h-12 mr-3 rounded-full">
+                        @if (auth()->user()->detailUser()->first()->photo != NULL)
+                            <img src="{{ url(Storage::url(auth()->user()->detailUser()->first()->photo)) }}" alt="photo profile" class="inline w-12 h-12 mr-3 rounded-full">
                         @else
                             <svg class="inline w-12 h-12 mr-3 rounded-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -96,14 +96,14 @@
                             </thead>
                             <tbody class="bg-white">
 
-                                @forelse ($orders as $key => $item)
+                                {{-- @forelse ($orders as $key => $item)
                                     <tr class="text-gray-700">
                                         <td class="w-1/3 px-1 py-5">
                                             <div class="flex items-center text-sm">
                                                 <div class="relative w-10 h-10 mr-3 rounded-full md:block">
 
-                                                    @if ($item->user_buyer->detail_user->photo != NULL)
-                                                        <img src="{{ url(Storage::url($item->user_buyer->detail_user->photo)) }}" alt="photo profile" class="object-cover w-full h-full rounded-full">
+                                                    @if ($item->user_buyer->detailUser->photo != NULL)
+                                                        <img src="{{ url(Storage::url($item->user_buyer->detailUser->photo)) }}" alt="photo profile" class="object-cover w-full h-full rounded-full">
                                                     @else
                                                         <svg class="object-cover w-full h-full rounded text-gray-300" fill="currentColor" viewBox="0 0 24 24">
                                                             <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -132,7 +132,7 @@
                                                 <div class="relative w-10 h-10 mr-3 rounded-full md:block">
 
                                                     {{-- validation photo --}}
-                                                    @if (count($item->service->thumbnail_service))
+                                                    {{-- @if (count($item->service->thumbnail_service))
                                                         @if($item->service->thumbnail_service[0]->thumbnail != null)
                                                             <img class="object-cover w-full h-full rounded" src="{{ url(Storage::url($item->service->thumbnail_service[0]->thumbnail)) }}" alt="" loading="lazy" />
                                                         @else
@@ -167,7 +167,7 @@
                                     </tr>
                                 @empty
                                     {{-- empty --}}
-                                @endforelse
+                                {{-- @endforelse --}}
                             </tbody>
                         </table>
                     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\Character;
 use App\Models\Team;
 use App\Models\User;
 
@@ -38,16 +39,23 @@ class CreateNewUser implements CreatesNewUsers
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
             ]), function (User $user) {
-                $this->createTeam($user);
+                // $this->createTeam($user);
 
                 // add to detail users
                 $detail_user = new DetailUser;
                 $detail_user->users_id = $user->id;
                 $detail_user->photo = NULL;
-                $detail_user->role = NULL;
+                $detail_user->highlight = NULL;
                 $detail_user->contact_number = NULL;
                 $detail_user->biography = NULL;
                 $detail_user->save();
+
+                $character = new Character;
+                $character->users_id = $user->id;
+                $character->point = 0;
+                $character->level = 1;
+                $character->xp = 0;
+                $character->save();
 
             });
         });
@@ -59,12 +67,12 @@ class CreateNewUser implements CreatesNewUsers
      * @param  \App\Models\User  $user
      * @return void
      */
-    protected function createTeam(User $user)
-    {
-        $user->ownedTeams()->save(Team::forceCreate([
-            'user_id' => $user->id,
-            'name' => explode(' ', $user->name, 2)[0]."'s Team",
-            'personal_team' => true,
-        ]));
-    }
+    // protected function createTeam(User $user)
+    // {
+    //     $user->ownedTeams()->save(Team::forceCreate([
+    //         'user_id' => $user->id,
+    //         'name' => explode(' ', $user->name, 2)[0]."'s Team",
+    //         'personal_team' => true,
+    //     ]));
+    // }
 }

@@ -13,12 +13,12 @@ use Symfony\Component\HttpFoundation\Response;
 use File;
 use Auth;
 
-use App\Models\Order;
+use App\Models\FinishedBook;
 use App\Models\Service;
 use App\Models\User;
 use App\Models\OrderStatus;
 
-class RequestController extends Controller
+class BooksController extends Controller
 {
     public function __construct()
     {
@@ -32,9 +32,9 @@ class RequestController extends Controller
      */
     public function index()
     {
-        $orders = Order::where('buyer_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        $books = FinishedBook::orderBy('created_at', 'desc')->get();
 
-        return view('pages.dashboard.request.index', compact('orders'));
+        return view('pages.dashboard.books.index', compact('books'));
     }
 
     /**
@@ -64,13 +64,13 @@ class RequestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        // detail
-        $order = Order::where('id', $id)->first();
+    // public function show($id)
+    // {
+    //     // detail
+    //     $order = Order::where('id', $id)->first();
 
-        return view('pages.dashboard.request.detail', compact('order'));
-    }
+    //     return view('pages.dashboard.request.detail', compact('order'));
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -109,16 +109,16 @@ class RequestController extends Controller
 
     // custom
 
-    public function approve($id)
-    {
-        $order = Order::where('id', $id)->first();
+    // public function approve($id)
+    // {
+    //     $order = Order::where('id', $id)->first();
 
-        // update order
-        $order = Order::find($order['id']);
-        $order->order_status_id = 1;
-        $order->save();
+    //     // update order
+    //     $order = Order::find($order['id']);
+    //     $order->order_status_id = 1;
+    //     $order->save();
 
-        toast()->success('Approve has been success');
-        return redirect()->route('member.request.index');
-    }
+    //     toast()->success('Approve has been success');
+    //     return redirect()->route('member.request.index');
+    // }
 }
