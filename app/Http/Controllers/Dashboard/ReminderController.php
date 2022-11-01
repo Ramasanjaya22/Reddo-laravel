@@ -12,12 +12,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use File;
-use Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
-use App\Models\Order;
-use App\Models\Service;
+use App\Models\Reminder;
 use App\Models\AdvantageUser;
 use App\Models\AdvantageService;
 use App\Models\ThumbnailService;
@@ -37,7 +36,10 @@ class ReminderController extends Controller
      */
     public function index()
     {
-        return view('pages.dashboard.reminder.index');
+        $reminders = Reminder::where('user_id', '=', Auth::user()->id)->get();
+        $test = Auth::user()->id;
+
+        return view('pages.dashboard.reminder.index', ['reminders' => $reminders]);
     }
 
     /**
@@ -47,18 +49,27 @@ class ReminderController extends Controller
      */
     public function create()
     {
-        return abort(404);
+        return view('pages.dashboard.reminder.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        return abort(404);
+        $user_id = Auth::user()->id;
+        $description = $request->input('keterangan');
+        $start_time = $request->input('start_time');
+        $end_time = $request->input('end_time');
+
+        DB::table('reminders')->insert([
+            'user_id' => $user_id,
+            'description' => $description,
+            'start_time' => $start_time,
+            'end_time' => $end_time
+        ]);
+
+
+        return redirect()->back()->withMessage('Pengingat berhasil dibuat');
+
+        // return abort(404);
     }
 
     /**

@@ -17,7 +17,8 @@ class CreateRemindersTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->text('description');
-            $table->dateTime('time');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
             $table->timestamps();
         });
     }

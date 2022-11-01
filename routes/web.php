@@ -40,6 +40,8 @@ Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sa
 
     // reminder
     Route::resource('reminder', ReminderController::class);
+    Route::get('create_reminder', [ReminderController::class, 'create'])->name('create.reminder');
+
     // Route::get('accept/order/{id}', [MyOrderController::class, 'accepted'])->name('accept.order');
     // Route::get('reject/order/{id}', [MyOrderController::class, 'rejected'])->name('reject.order');
     // Route::resource('order', MyOrderController::class);
