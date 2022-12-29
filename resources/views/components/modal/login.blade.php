@@ -57,8 +57,11 @@
                 <div class="px-6 pb-6 rounded-b-xl mx-10">
                     <input type="hidden" name="auth" value="true">
 
-                    <button class="bg-serv-button text-white text-lg py-3 px-12 my-2 rounded-lg w-full" type="submit">Masuk
-                    </button>
+                    <button class="bg-serv-button text-white text-lg py-3 px-12 my-2 rounded-lg w-full" type="submit">Masuk</button>
+
+                    <a href="{{ url('auth/google') }}" class="btn btn-lg btn-danger btn-block">
+                        <button class="bg-serv-button text-white text-lg py-3 px-12 my-2 rounded-lg w-full" type="button">Login with Google</button>
+                    </a>
 
                     <p href="#" class="text-center py-5">
                         Belum punya akun? <a href="#" class="text-serv-button" onclick="toggleModal('loginModal');toggleModal('registerModal') ">Daftar kuy</a>

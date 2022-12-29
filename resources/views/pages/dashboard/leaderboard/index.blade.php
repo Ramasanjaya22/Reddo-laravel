@@ -37,9 +37,11 @@
                                     @for ($i = 0; $i < count($characters); $i++)
                                         <tr class="text-gray-700 border-b">
                                             <td class="w-2/6 px-1 py-5">
-                                                <div class="flex items-center text-sm">
-                                                    <img src="{{ URL('assets/rank/'.$crowns[0][$i]) }}" alt="">
-                                                </div>
+                                                @if($i < 3)
+                                                    <div class="flex items-center text-sm">
+                                                        <img src="{{ URL('assets/rank/'.$crowns[0][$i]) }}" alt="">
+                                                    </div>
+                                                @endif
                                             </td>
                                             <td class="px-1 py-5 text-sm">
                                                 @if ($characters->all()[$i]->user->detailUser->photo != NULL)
