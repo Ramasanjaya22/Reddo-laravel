@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->integer('goal')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->string('google_id')->nullable()->unique();
         });
     }
 

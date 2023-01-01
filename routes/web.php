@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // front ( landing )
 use App\Http\Controllers\Landing\LandingController;
+use App\Http\Controllers\GoogleLoginController;
 
 // member ( dashboard )
 use App\Http\Controllers\Dashboard\MemberController;
@@ -11,6 +12,8 @@ use App\Http\Controllers\Dashboard\LeaderboardController;
 use App\Http\Controllers\Dashboard\BooksController;
 use App\Http\Controllers\Dashboard\ReminderController;
 use App\Http\Controllers\Dashboard\ProfileController;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +43,8 @@ Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sa
 
     // reminder
     Route::resource('reminder', ReminderController::class);
+    Route::get('create_reminder', [ReminderController::class, 'create'])->name('create.reminder');
+
     // Route::get('accept/order/{id}', [MyOrderController::class, 'accepted'])->name('accept.order');
     // Route::get('reject/order/{id}', [MyOrderController::class, 'rejected'])->name('reject.order');
     // Route::resource('order', MyOrderController::class);
@@ -49,3 +54,6 @@ Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sa
     Route::resource('profile', ProfileController::class);
 
 });
+
+Route::get('auth/google', [GoogleLoginController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleLoginController::class, 'handleGoogleCallback']);
