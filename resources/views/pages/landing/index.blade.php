@@ -10,26 +10,22 @@
         <div class="hero">
             <div class="mx-auto flex pt-16 pb-16 lg:pb-20 lg:px-24 md:px-16 sm:px-8 px-8 lg:flex-row flex-col">
                 <!-- Left Column -->
-                <div class="lg:flex-grow lg:w-1/2 flex flex-col lg:items-start lg:text-left mb-3 md:mb-12 lg:mb-0 items-center text-center text-serv-button">
-                    <h1
-                        class="lg:leading-normal sm:text-3xl lg:text-4xl text-2xl mb-5 font-bold lg:mt-16 ">
+                <div
+                    class="lg:flex-grow lg:w-1/2 flex flex-col lg:items-start lg:text-left mb-3 md:mb-12 lg:mb-0 items-center text-center text-serv-button">
+                    <h1 class="lg:leading-normal sm:text-3xl lg:text-3xl text-2xl mb-5 font-bold lg:mt-16 ">
                         Build Your Reading Habbit <br class="lg:block hidden">
                         and become a Good
                         <br class="lg:block hidden">
                         Reader with <span class="text-reddo-red">Reddo!</span>
                     </h1>
-                    <!-- <p class="text-lg leading-relaxed text-serv-text font-light tracking-wide mb-10 lg:mb-18 ">
-                        Find thousands of remote workers who have the best <br class="lg:block hidden">
-                        skills and experience to help you accomplishing <br class="lg:block hidden">
-                        your projects.
-                    </p> -->
+                    <p class="pr-10">Reddo adalah aplikasi Tracking baca berbasis gamifikasi 🎮 sehingga kegiatan
+                        membaca tidak lagi membosankan!</p>
                     <div
                         class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">
-                        <button class="bg-serv-button text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" onclick="toggleModal('registerModal')">
-                            Coba Reddo!
+                        <button class="bg-serv-button text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg"
+                            onclick="toggleModal('registerModal')">
+                            Mulai
                         </button>
-
-
                     </div>
                 </div>
                 <!-- Right Column -->
@@ -38,53 +34,33 @@
                         src="{{ asset('/assets/hero-image.webp') }}" alt="" />
                 </div>
             </div>
-            <div class="lg:mb-20 mb-10 flex sm:space-x-4 space-x-1">
-                <div class="flex-1 flex items-center justify-center py-3 px-6">
-                    <img src="{{ url('images/brand-logo/netflix.svg') }}" alt="">
-                </div>
-                <div class="flex-1 flex items-center justify-center py-3 px-6">
-                    <img src="{{ url('images/brand-logo/amazon.svg') }}" alt="">
-                </div>
-                <div class="flex-1 flex items-center justify-center py-3 px-6">
-                    <img src="{{ url('images/brand-logo/uber.svg') }}" alt="">
-                </div>
-                <div class="flex-1 flex items-center justify-center py-3 px-6">
-                    <img src="{{ url('images/brand-logo/grab.svg') }}" alt="">
-                </div>
-                <div class="flex-1 flex items-center justify-center py-3 px-6">
-                    <img src="{{ url('images/brand-logo/google.svg') }}" alt="">
-                </div>
-            </div>
         </div>
     </div>
 
-    <div>
-        <!-- call to action -->
-        <div class="py-10 lg:py-24 flex lg:flex-row flex-col items-centercta-bg">
-            <!-- Left Column -->
-            <div class="w-full lg:w-1/2 text-center justify-center flex lg:mb-0 mb-12">
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" data-lity>
-                    <img id="hero" src="{{ asset('/assets/images/video-placeholder.png') }}" alt="" class="p-5" />
-                </a>
-            </div>
-            <!-- Right Column -->
-            <div class="lg:w-1/2 w-full flex flex-col lg:items-start items-center lg:text-left text-center">
-                <h2 class="md:text-4xl text-3xl font-semibold mb-10 lg:leading-normal text-medium-black">
-                    Increase Productivity. <br>
-                    Save Your Time & Budget.
-                </h2>
-                <p class="text-lg leading-relaxed text-serv-text font-light mb-10 lg:mb-18">
-                    Find thousands of skilled and experienced <br class="lg:block hidden">
-                    remote workers to help you accomplishing <br class="lg:block hidden">
-                    your projects.
-                </p>
-                <a
-                    href="about"
-                    class="bg-serv-button px-10 py-4 text-base text-white font-semibold rounded-xl cursor-pointer focus:outline-none tracking-wide">
-                    Learn More
-                </a>
-            </div>
+    <div class="min-h-screen bg-center bg-gradient-to-br from-red-900 via-rose-600 to-red-100"">
+        <div class="text-center text-neutral-content flex justify-center">
+            <div class="max-w-md p-5">
+            <h1 class="mb-5 text-2xl font-bold text-serv-button">Literasi Membaca di Indonesia</h1>
+            <p class="mb-3 text-serv-button">
+                Berdasarkan hasil penelitian dari United Nations Educational, Scientific and
+                Cultural Organization (UNESCO) pada tahun 2016 menunjukan bahwa indeks minat
+                baca di Indonesia hanya sebesar 0.001 persen, yang artinya dari 1000 orang
+                hanya 1 orang yang memiliki ketertarikan dalam membaca (Perpusnas,2020).
+                Program for International Student Assessment (PISA) juga melakukan survei pada
+                tahun 2019 yang diterbitkan oleh Organization for Economic Co-Operation and
+                Development (OECD) 2018 mencatat bahwa Indonesia menempati peringkat 10
+                terbawah dalam hal literasi, lebih tepatnya berada pada urutan 62 dari 70 [1].
+              </p>
+              <p class="mb-3 text-serv-button">
+                Hal inilah yang mendorong kami dari tim Ngetech melakukan riset dan
+                mengembangkan solusi berupa website Reading Tracker yang dapat memberikan
+                tujuan dan tantangan kepada siswa untuk mencoba membaca minimal satu buku saja
+                dengan pendekatan konsep Gamifikasi.
+              </p>
+
+          </div>
         </div>
-    </div>
+      </div>
+
 
 @endsection

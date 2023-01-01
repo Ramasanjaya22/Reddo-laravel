@@ -21,7 +21,6 @@
         "tailwindcss": "^2.2.2"
     },
     "dependencies": {
-        "autoprefixer": "10.4.5",
-        "daisyui": "^2.22.0"
+        "autoprefixer": "10.4.5"
     }
 }

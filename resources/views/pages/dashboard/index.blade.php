@@ -38,142 +38,9 @@
 
         <section class="container px-6 mx-auto mt-5">
             <div class="grid gap-5 md:grid-cols-12">
-                <main class="p-4 lg:col-span-7 md:col-span-12 md:pt-0">
-                    <div class="sm:grid sm:h-32 sm:grid-flow-row sm:gap-4 sm:grid-cols-3">
-                        <div class="flex flex-col justify-center px-4 py-4 mb-4 bg-white rounded-xl">
-                            <div>
-                                <div>
-                                    <img src="{{ asset('/assets/images/leaderboard-gold-icon.svg') }}" alt="" class="w-8 h-8">
-                                </div>
-                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $progress ?? '' }}</p>
-                                <p class="text-sm text-left text-gray-500">
-                                    Terbaik <br class="hidden lg:block">
-                                    di papan peringkat
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center px-4 py-4 mb-4 bg-white rounded-xl">
-                            <div>
-                                <div>
-                                    <img src="{{ asset('/assets/images/book-year-challange-icon.svg') }}" alt="" class="w-8 h-8">
-                                </div>
-                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $completed ?? '' }}</p>
-                                <p class="text-sm text-left text-gray-500">
-                                    Books Year <br class="hidden lg:block">
-                                    Challange 2022
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center px-4 py-4 mb-4 bg-white rounded-xl">
-                            <div>
-                                <div>
-                                    <img src="{{ asset('/assets/images/charm_trophy-icon.svg') }}" alt="" class="w-8 h-8">
-                                </div>
-                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $freelancer ?? '' }}</p>
-                                <p class="text-sm text-left text-gray-500">
-                                Achievement <br class="hidden lg:block">
-                                    Yang sudah terbuka
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 mt-8 bg-white rounded-xl">
-                        <div>
-                            <h2 class="mb-1 text-xl font-semibold">
-                                Latest Orders
-                            </h2>
-                            <p class="text-sm text-gray-400">
-                                {{ $progress ?? '' }} Total Orders On Progress
-                            </p>
-                        </div>
-                        <table class="w-full mt-4" aria-label="Table">
-                            <thead>
-                                <tr class="text-sm font-normal text-left text-gray-900 border-b border-b-gray-600">
-                                    <th class="py-4" scope="">Name</th>
-                                    <th class="py-4" scope="">Services Name</th>
-                                    <th class="py-4" scope="">Deadline</th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white">
 
-                                {{-- @forelse ($orders as $key => $item)
-                                    <tr class="text-gray-700">
-                                        <td class="w-1/3 px-1 py-5">
-                                            <div class="flex items-center text-sm">
-                                                <div class="relative w-10 h-10 mr-3 rounded-full md:block">
-
-                                                    @if ($item->user_buyer->detailUser->photo != NULL)
-                                                        <img src="{{ url(Storage::url($item->user_buyer->detailUser->photo)) }}" alt="photo profile" class="object-cover w-full h-full rounded-full">
-                                                    @else
-                                                        <svg class="object-cover w-full h-full rounded text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                                                            <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                                                        </svg>
-                                                    @endif
-
-                                                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                                                </div>
-                                                <div>
-                                                    <p class="font-medium text-black">{{ $item->user_buyer->name ?? '' }}</p>
-                                                    @if ($item->order_status_id == '1')
-                                                        <p class="text-sm text-green-500">{{ $item->order_status->name ?? '' }}</p>
-                                                    @elseif ($item->order_status_id == '2')
-                                                        <p class="text-sm text-yellow-500">{{ $item->order_status->name ?? '' }}</p>
-                                                    @elseif ($item->order_status_id == '3')
-                                                        <p class="text-sm text-red-500">{{ $item->order_status->name ?? '' }}</p>
-                                                    @else
-                                                        <p class="text-sm text-black">{{ $item->order_status->name ?? '' }}</p>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                        </td>
-
-                                        <td class="w-2/4 px-1 py-5">
-                                            <div class="flex items-center text-sm">
-                                                <div class="relative w-10 h-10 mr-3 rounded-full md:block">
-
-                                                    {{-- validation photo --}}
-                                                    {{-- @if (count($item->service->thumbnail_service))
-                                                        @if($item->service->thumbnail_service[0]->thumbnail != null)
-                                                            <img class="object-cover w-full h-full rounded" src="{{ url(Storage::url($item->service->thumbnail_service[0]->thumbnail)) }}" alt="" loading="lazy" />
-                                                        @else
-                                                            <svg class="object-cover w-full h-full rounded text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                                                                <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                                                            </svg>
-                                                        @endif
-                                                    @else
-                                                        <svg class="object-cover w-full h-full rounded text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                                                            <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                                                        </svg>
-                                                    @endif
-
-                                                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                                                </div>
-                                                <div>
-                                                    <p class="font-medium text-black">
-                                                        {{ $item->service->title ?? '' }}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </td>
-
-                                        <td class="px-1 py-5 text-xs text-red-500">
-                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline mb-1">
-                                                <path d="M7.0002 12.8332C10.2219 12.8332 12.8335 10.2215 12.8335 6.99984C12.8335 3.77818 10.2219 1.1665 7.0002 1.1665C3.77854 1.1665 1.16687 3.77818 1.16687 6.99984C1.16687 10.2215 3.77854 12.8332 7.0002 12.8332Z" stroke="#F26E6E" stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M7 3.5V7L9.33333 8.16667" stroke="#F26E6E" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-
-                                            {{ date("d/m/Y",strtotime($item->expired)) ?? '' }}
-                                        </td>
-                                    </tr>
-                                @empty
-                                    {{-- empty --}}
-                                {{-- @endforelse --}}
-                            </tbody>
-                        </table>
-                    </div>
-                </main>
                 <aside class="p-4 lg:col-span-5 md:col-span-12 md:pt-0">
-                    <div class="relative w-full h-56 m-auto text-white transition-transform transform bg-red-100 rounded-xl">
+                    {{-- <div class="relative w-full h-56 m-auto text-white transition-transform transform bg-red-100 rounded-xl">
 
                         <img class="relative object-cover w-full h-full rounded-xl" src="{{ asset('/assets/images/card-background.png') }}" alt="">
 
@@ -215,8 +82,8 @@
                             </div>
 
                         </div>
-                    </div>
-                    <div class="p-6 mt-8 bg-white rounded-xl">
+                    </div> --}}
+                    <div class="p-6 bg-white rounded-xl">
                         <div>
                             <h2 class="mb-1 text-xl font-semibold">
                                 Top Reviews
@@ -323,6 +190,66 @@
                         </table>
                     </div>
                 </aside>
+
+                <main class="p-4 lg:col-span-7 md:col-span-12 md:pt-0">
+                    <div class="sm:grid sm:h-32 sm:grid-flow-row sm:gap-4 sm:grid-cols-3">
+                        <div class="flex flex-col justify-center px-4 py-4 mb-4 bg-white rounded-xl">
+                            <div>
+                                <div>
+                                    <img src="{{ asset('/assets/images/leaderboard-gold-icon.svg') }}" alt="" class="w-8 h-8">
+                                </div>
+                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $progress ?? '' }}</p>
+                                <p class="text-sm text-left text-gray-500">
+                                    Terbaik <br class="hidden lg:block">
+                                    di papan peringkat
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center px-4 py-4 mb-4 bg-white rounded-xl">
+                            <div>
+                                <div>
+                                    <img src="{{ asset('/assets/images/book-year-challange-icon.svg') }}" alt="" class="w-8 h-8">
+                                </div>
+                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $completed ?? '' }}</p>
+                                <p class="text-sm text-left text-gray-500">
+                                    Books Year <br class="hidden lg:block">
+                                    Challange 2022
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center px-4 py-4 mb-4 bg-white rounded-xl">
+                            <div>
+                                <div>
+                                    <img src="{{ asset('/assets/images/charm_trophy-icon.svg') }}" alt="" class="w-8 h-8">
+                                </div>
+                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $freelancer ?? '' }}</p>
+                                <p class="text-sm text-left text-gray-500">
+                                Achievement <br class="hidden lg:block">
+                                    Yang sudah terbuka
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 mt-8 bg-white rounded-xl">
+                        <div>
+                            <h2 class="mb-1 text-xl font-semibold">
+                                Klik tombol fokus, dan dapatkan poin!
+                            </h2>
+                            <p class="text-sm text-gray-400">
+                                {{ $progress ?? '' }} 
+                            </p>
+                        </div
+                        <table class="w-full mt-4" aria-label="Table">
+                            <thead>
+                                <tr class="text-sm font-normal text-left text-gray-900 border-b border-b-gray-600">
+                            </thead>
+                            <tbody class="bg-white">
+                                <div>Naik level dan dapatkan Acq75hievement dengan coba Reddo Fokus Timer!</div>
+                            </tbody>
+                        </table>
+                    </div>
+                </main>
+                
             </div>
         </section>
     </main>
