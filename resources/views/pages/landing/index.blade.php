@@ -35,32 +35,62 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="min-h-screen bg-center bg-gradient-to-br from-red-900 via-rose-600 to-red-100"">
-        <div class="text-center text-neutral-content flex justify-center">
-            <div class="max-w-md p-5">
-            <h1 class="mb-5 text-2xl font-bold text-serv-button">Literasi Membaca di Indonesia</h1>
-            <p class="mb-3 text-serv-button">
-                Berdasarkan hasil penelitian dari United Nations Educational, Scientific and
-                Cultural Organization (UNESCO) pada tahun 2016 menunjukan bahwa indeks minat
-                baca di Indonesia hanya sebesar 0.001 persen, yang artinya dari 1000 orang
-                hanya 1 orang yang memiliki ketertarikan dalam membaca (Perpusnas,2020).
-                Program for International Student Assessment (PISA) juga melakukan survei pada
-                tahun 2019 yang diterbitkan oleh Organization for Economic Co-Operation and
-                Development (OECD) 2018 mencatat bahwa Indonesia menempati peringkat 10
-                terbawah dalam hal literasi, lebih tepatnya berada pada urutan 62 dari 70 [1].
-              </p>
-              <p class="mb-3 text-serv-button">
-                Hal inilah yang mendorong kami dari tim Ngetech melakukan riset dan
-                mengembangkan solusi berupa website Reading Tracker yang dapat memberikan
-                tujuan dan tantangan kepada siswa untuk mencoba membaca minimal satu buku saja
-                dengan pendekatan konsep Gamifikasi.
-              </p>
+        <div class="min-h-screen bg-center bg-no-repeat bg-cover" style="background-image: url(assets/gambar-baca.jpg);">
 
-          </div>
+            <div class="text-center text-neutral-content flex justify-center">
+                <div class="card rounded-md shadow-lg bg-white my-2">
+                    <div class="max-w-md p-5">
+                        <h1 class="mb-5 text-2xl font-bold text-serv-button">Literasi Membaca di Indonesia</h1>
+                        <p class="mb-3 text-serv-button text-sm">
+                            Berdasarkan hasil penelitian dari United Nations Educational, Scientific and
+                            Cultural Organization (UNESCO) pada tahun 2016 menunjukan bahwa indeks minat
+                            baca di Indonesia hanya sebesar 0.001 persen, yang artinya dari 1000 orang
+                            hanya 1 orang yang memiliki ketertarikan dalam membaca (Perpusnas,2020).
+                            Program for International Student Assessment (PISA) juga melakukan survei pada
+                            tahun 2019 yang diterbitkan oleh Organization for Economic Co-Operation and
+                            Development (OECD) 2018 mencatat bahwa Indonesia menempati peringkat 10
+                            terbawah dalam hal literasi, lebih tepatnya berada pada urutan 62 dari 70 [1].
+                        </p>
+                        <p class="mb-3 text-serv-button text-sm">
+                            Hal inilah yang mendorong kami dari tim Ngetech melakukan riset dan
+                            mengembangkan solusi berupa website Reading Tracker yang dapat memberikan
+                            tujuan dan tantangan kepada siswa untuk mencoba membaca minimal satu buku saja
+                            dengan pendekatan konsep Gamifikasi.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="hero min-h-screen">
+            <div class="text-center">
+                <section>
+                    <h1 class="text-3xl font-bold mb-4 text-serv-button mt-4">Meet Our Team</h1>
+                    <div class="logos flex">
+                        <div class="logo">
+                            <img src="/assets/profile/rama.jpg" width="100%" alt="" />
+                        </div>
+                        <div class="logo">
+                            <img src="/assets/profile/thessa.jpg" width="100%" alt="" />
+                        </div>
+                        <div class="logo">
+                            <img src="/assets/profile/riki.jpg" width="100%" alt="" />
+                        </div>
+                    </div>
+                    <h1 class="text-3xl font-bold mb-4 text-serv-button mt-4">Contributor</h1>
+                    <div class="logos flex">
+                        <div class="logo mx-auto">
+                            <img src="/assets/profile/sahlan.jpg" width="100%" alt="" />
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+
+    </div>
 
 
 @endsection

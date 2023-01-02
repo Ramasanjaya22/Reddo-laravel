@@ -26,9 +26,10 @@ use Laravel\Socialite\Facades\Socialite;
 |
 */
 
-Route::get('about', [LandingController::class, 'about'])->name('about.landing');
-Route::get('forum', [LandingController::class, 'forum'])->name('forum.landing');
 Route::resource('/', LandingController::class);
+// Route::get('about', [LandingController::class, 'about'])->name('about.landing');
+Route::get('forum', [LandingController::class, 'forum'])->name('forum.landing');
+
 
 Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sanctum', 'verified']], function() {
 
