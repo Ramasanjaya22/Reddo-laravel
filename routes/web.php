@@ -30,6 +30,16 @@ Route::resource('/', LandingController::class);
 // Route::get('about', [LandingController::class, 'about'])->name('about.landing');
 Route::get('forum', [LandingController::class, 'forum'])->name('forum.landing');
 
+//community
+Route::get('communities', 'CommunityController@index');
+// Route::get('/communities/create', 'CommunityController@create');
+// Route::post('/communities', 'CommunityController@store');
+// Route::get('/communities/{id}', 'CommunityController@show');
+// Route::get('/communities/{id}/edit', 'CommunityController@edit');
+// Route::patch('/communities/{id}', 'CommunityController@update');
+// Route::delete('/communities/{id}', 'CommunityController@destroy');
+
+
 
 Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sanctum', 'verified']], function() {
 

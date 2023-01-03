@@ -60,7 +60,7 @@
                     <button class="bg-serv-button text-white text-lg py-3 px-12 my-2 rounded-lg w-full" type="submit">Masuk</button>
 
                     <a href="{{ url('auth/google') }}" class="btn btn-lg btn-danger btn-block">
-                        <button class="bg-serv-button text-white text-lg py-3 px-12 my-2 rounded-lg w-full" type="button">Login with Google</button>
+                        <button class="bg-gray-400 text-serv-button text-lg py-3 px-12 my-2 rounded-lg w-full" type="button">Login with Google</button>
                     </a>
 
                     <p href="#" class="text-center py-5">

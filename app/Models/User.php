@@ -16,45 +16,59 @@ class User extends Authenticatable
 
     protected $hidden = ['password', 'remember_token'];
 
-    public function character() {
+    public function character()
+    {
         return $this->hasOne("App\Models\Character", 'users_id', 'id');
     }
 
-    public function finishedBook() {
+    public function finishedBook()
+    {
         return $this->hasMany(FinishedBook::class);
     }
 
-    public function quest() {
+    public function quest()
+    {
         return $this->hasMany(Quest::class);
     }
 
-    public function reminder() {
+    public function reminder()
+    {
         return $this->hasMany(Reminder::class);
     }
 
-    public function communityPost() {
-        return $this->hasMany(CommunityPost::class);
+    // public function communityPost() {
+    //     return $this->hasMany(CommunityPost::class);
+    // }
+    public function communities()
+    {
+        return $this->belongsToMany(Community::class, 'community_user');
     }
 
-    public function border() {
+    public function border()
+    {
         return $this->belongsToMany(Border::class, 'user_borders');
     }
-    public function badge() {
+    public function badge()
+    {
         return $this->belongsToMany(Badge::class, 'user_badges');
     }
-    public function theme() {
+    public function theme()
+    {
         return $this->belongsToMany(Theme::class, 'user_themes');
     }
 
-    public function comment() {
+    public function comment()
+    {
         return $this->hasMany(Comment::class);
     }
 
-    public function reviewComment() {
+    public function reviewComment()
+    {
         return $this->hasMany(ReviewComment::class);
     }
 
-    public function detailUser() {
+    public function detailUser()
+    {
         return $this->hasOne(DetailUser::class, 'users_id', 'id');
     }
 }

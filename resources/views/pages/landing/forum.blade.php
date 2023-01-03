@@ -1,6 +1,6 @@
 @extends('layouts.front')
 
-@section('title', ' Explore')
+@section('title', ' Forum Community')
 
 @section('content')
 
