@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 // front ( landing )
 use App\Http\Controllers\Landing\LandingController;
 use App\Http\Controllers\GoogleLoginController;
+use App\Http\Controllers\PostController;
 
 // member ( dashboard )
 use App\Http\Controllers\Dashboard\MemberController;
@@ -28,10 +29,13 @@ use Laravel\Socialite\Facades\Socialite;
 
 Route::resource('/', LandingController::class);
 // Route::get('about', [LandingController::class, 'about'])->name('about.landing');
-Route::get('forum', [LandingController::class, 'forum'])->name('forum.landing');
-
+//Route::get('forum', [LandingController::class, 'forum'])->name('forum.landing');
+//post
+Route::get('posts', [PostController::class, 'index'])->name('posts.landing');
+Route::get('/posts/create', [PostController::class, 'create']);
+Route::post('/posts', [PostController::class, 'store']);
 //community
-Route::get('communities', 'CommunityController@index');
+//Route::get('communities', 'CommunityController@index');
 // Route::get('/communities/create', 'CommunityController@create');
 // Route::post('/communities', 'CommunityController@store');
 // Route::get('/communities/{id}', 'CommunityController@show');
@@ -41,7 +45,8 @@ Route::get('communities', 'CommunityController@index');
 
 
 
-Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sanctum', 'verified']], function() {
+
+Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sanctum', 'verified']], function () {
 
     // dashboard
     Route::resource('dashboard', MemberController::class);
@@ -63,7 +68,6 @@ Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sa
     // profile
     Route::get('delete_photo', [ProfileController::class, 'delete'])->name('delete.photo.profile');
     Route::resource('profile', ProfileController::class);
-
 });
 
 Route::get('auth/google', [GoogleLoginController::class, 'redirectToGoogle']);

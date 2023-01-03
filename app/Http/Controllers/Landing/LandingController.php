@@ -97,12 +97,12 @@ class LandingController extends Controller
 
     // custom
 
-    public function forum()
-    {
-        // $services = Service::orderBy('created_at', 'desc')->get();
+    // public function forum()
+    // {
+         // $services = Service::orderBy('created_at', 'desc')->get();
 
-        return view('pages.landing.forum');
-    }
+    //     return view('pages.landing.forum');
+    // }
 
     // public function about()
     // {
