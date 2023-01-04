@@ -9,7 +9,8 @@
         <div class="bg-serv-bg-explore overflow-hidden">
             <div class="pt-16 pb-16 lg:pb-20 lg:px-24 md:px-16 sm:px-8 px-8 mx-auto">
                 <div class="text-center">
-                    <h1 class="text-4xl font-semibold mb-1">Selamat Datang di Forum Komunitas</h1>
+                    <h1 class="text-4xl font-semibold mb-1 text-primary">Selamat Datang di Forum Komunitas <img src="{{ asset('assets/forum.svg') }}" alt="forum" class="w-8 inline"></h1>
+
                     <p class="leading-8 text-serv-text mb-10">
                         Bersama komunitas membaca, kita melengkapi diri dengan wawasan yang luas
                     </p>

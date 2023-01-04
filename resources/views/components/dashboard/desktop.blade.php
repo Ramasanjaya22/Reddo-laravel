@@ -41,14 +41,9 @@
                         aria-hidden="true"></span>
                 @endif
 
-                <a class="inline-flex items-center w-full text-sm font-medium text-gray-800 transition-colors duration-150 hover:text-gray-800 "
+                <a class="inline-flex items-center w-full text-sm font-bold text-gray-800 transition-colors duration-150 hover:text-gray-800 "
                     href="{{ route('member.dashboard.index') }}">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M19.5 16V9.02123C19.5 7.75027 18.896 6.55494 17.8728 5.80101L12.3728 1.74838C10.9618 0.708674 9.03823 0.708675 7.6272 1.74838L2.1272 5.80101C1.10401 6.55494 0.5 7.75027 0.5 9.02123V16C0.5 18.2091 2.29086 20 4.5 20H5.75C6.57843 20 7.25 19.3284 7.25 18.5V16C7.25 15.1716 7.92157 14.5 8.75 14.5H11.25C12.0784 14.5 12.75 15.1716 12.75 16V18.5C12.75 19.3284 13.4216 20 14.25 20H15.5C17.7091 20 19.5 18.2091 19.5 16Z"
-                            fill="#082431" />
-                    </svg>
+                    <img src="{{ asset('assets/home.svg') }}" alt="home">
                     <span class="ml-4">Dashboard</span>
                 </a>
             </li>
@@ -67,17 +62,7 @@
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
                     href="{{ route('member.leaderboard.index') }}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="7" height="7" rx="2"
-                            stroke="#082431" stroke-width="1.5" />
-                        <rect x="3" y="14" width="7" height="7" rx="2"
-                            stroke="#082431" stroke-width="1.5" />
-                        <rect x="14" y="3" width="7" height="7" rx="2"
-                            stroke="#082431" stroke-width="1.5" />
-                        <rect x="14" y="14" width="7" height="7" rx="2"
-                            stroke="#082431" stroke-width="1.5" />
-                    </svg>
+                    <img src="{{ asset('assets/leaderboard.svg') }}" alt="leaderboard">
                     <span class="ml-4">Papan Peringkat</span>
 
 
@@ -96,15 +81,7 @@
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
                     href="{{ route('member.books.index') }}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2.25" y="1.25" width="19.5" height="21.5" rx="4.75"
-                            stroke="#082431" stroke-width="1.5" />
-                        <rect x="11.3" y="7" width="1.4" height="10" rx="0.7"
-                            fill="#082431" />
-                        <rect x="17" y="11" width="1.4" height="10" rx="0.7"
-                            transform="rotate(90 17 11)" fill="#082431" />
-                    </svg>
+                    <img src="{{ asset('assets/Library.svg') }}" alt="assets/Library.svg">
                     <!-- Active Icons -->
                     <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2.25" y="1.25" width="19.5" height="21.5" rx="4.75" fill="#082431" stroke="#082431" stroke-width="1.5" />
@@ -132,17 +109,7 @@
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
                     href="{{ route('member.reminder.index') }}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3.25" y="2.25" width="17.5" height="19.5" rx="4.75"
-                            stroke="#082431" stroke-width="1.5" />
-                        <line x1="7.75" y1="7.25" x2="10.25" y2="7.25" stroke="#082431"
-                            stroke-width="1.5" stroke-linecap="round" />
-                        <line x1="7.75" y1="11.25" x2="16.25" y2="11.25" stroke="#082431"
-                            stroke-width="1.5" stroke-linecap="round" />
-                        <line x1="7.75" y1="15.25" x2="16.25" y2="15.25" stroke="#082431"
-                            stroke-width="1.5" stroke-linecap="round" />
-                    </svg>
+                    <img src="{{ asset('assets/carbon_reminder.svg') }}" alt="reminassets/carbon_reminder.svg">
                     <!-- Active Icons -->
                     <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3" y="2" width="18" height="20" rx="4" fill="#082431" />
@@ -160,10 +127,7 @@
 
             {{-- <li class="relative px-6 py-3">
 
-                @if (request()->is('member/profile') ||
-                    request()->is('member/profile/*') ||
-                    request()->is('member/*/profile') ||
-                    request()->is('member/*/profile/*'))
+                @if (request()->is('member/profile') || request()->is('member/profile/*') || request()->is('member/*/profile') || request()->is('member/*/profile/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
                         aria-hidden="true"></span>
                 @endif

@@ -54,6 +54,17 @@ body {
 		'Apple Color Emoji',
 		'Segoe UI Emoji';
 }
+body::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: #593B9B;
+  }
 /*
 Grouping content
 ================
@@ -624,11 +635,33 @@ select{
 	.container{
 		max-width: 1024px;
 	}
+    body::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      body::-webkit-scrollbar-track {
+        background: #1e1e24;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background: #593B9B;
+      }
 }
 @media (min-width: 1280px){
 	.container{
 		max-width: 1280px;
 	}
+    body::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      body::-webkit-scrollbar-track {
+        background: #1e1e24;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background: #593B9B;
+      }
 }
 @media (min-width: 1536px){
 	.container{
@@ -1143,10 +1176,10 @@ select{
 .self-center{
 	align-self: center;
 }
-.overflow-x-scroll{
+/* .overflow-x-scroll{
 	overflow-x: scroll;
-}
-.overflow-hidden{
+} */
+/* .overflow-hidden{
 	overflow: hidden;
 }
 .overflow-y-auto{
@@ -1154,7 +1187,7 @@ select{
 }
 .overflow-x-hidden{
 	overflow-x: hidden;
-}
+} */
 .rounded-lg{
 	border-radius: 0.5rem;
 }
@@ -1863,6 +1896,17 @@ body {
 	--tw-ring-offset-width: 2px;
 }
 @media (min-width: 640px){
+    body::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      body::-webkit-scrollbar-track {
+        background: #1e1e24;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background: #593B9B;
+      }
 	.sm\:right-8{
 		right: 2rem;
 	}
@@ -2041,6 +2085,17 @@ body {
 	}
 }
 @media (min-width: 1024px){
+    body::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      body::-webkit-scrollbar-track {
+        background: #1e1e24;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background: #593B9B;
+      }
 	.lg\:right-24{
 		right: 6rem;
 	}
@@ -2224,3 +2279,4 @@ body {
 .bg-primary{
     color: #593B9B;
 }
+

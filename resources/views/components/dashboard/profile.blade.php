@@ -22,12 +22,16 @@
             class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
 
             <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
-                <a class="block px-4 py-2 mt-2 text-sm bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                    href="{{ route('member.profile.index') }}">Profile</a>
+                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline flex items-center"
+                    href="{{ route('member.profile.index') }}">
+                    <img src="{{ asset('assets/user.svg') }}" alt="user">
+                    <span>Profile</span></a>
 
-                <a class="block px-4 py-2 mt-2 text-sm bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline flex items-center"
                     href="{{ route('logout') }}"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <img src="{{ asset('assets/Shutdown.svg') }}" alt="Shutdown">
+                    <span>Logout</span>
 
                     <form action="{{ route('logout') }}" id="logout-form" method="POST" style="display: none;">
                         @csrf

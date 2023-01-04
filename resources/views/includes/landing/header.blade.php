@@ -2,7 +2,7 @@
     <div class="navbar-1-1" style="font-family: 'Poppins', sans-serif">
         <div class=" mx-auto flex flex-wrap flex-row items-center justify-between">
 
-            <a href="{{ route('index') }}" class="flex text-3xl font-bold items-center">
+            <a href="{{ route('index') }}" class="flex text-2xl font-bold items-center">
                 <img src="{{ asset('/assets/logo-reddo.svg') }}" alt="logo" />
             </a>
 
