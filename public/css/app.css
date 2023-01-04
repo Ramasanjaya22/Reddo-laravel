@@ -1402,6 +1402,9 @@ select {
 .h-3 {
 	height: 0.75rem;
 }
+.h-72 {
+	height: 18rem;
+}
 .min-h-screen {
 	min-height: 100vh;
 }
@@ -1584,6 +1587,9 @@ select {
 .grid-cols-3 {
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.grid-cols-12 {
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+}
 .flex-row {
 	flex-direction: row;
 }
@@ -1625,6 +1631,9 @@ select {
 }
 .gap-5 {
 	gap: 1.25rem;
+}
+.gap-2 {
+	gap: 0.5rem;
 }
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
 	--tw-space-x-reverse: 0;
@@ -2079,6 +2088,14 @@ select {
 	font-size: 1.875rem;
 	line-height: 2.25rem;
 }
+.text-5xl {
+	font-size: 3rem;
+	line-height: 1;
+}
+.text-4xl {
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+}
 .font-medium {
 	font-weight: 500;
 }
@@ -2096,6 +2113,9 @@ select {
 }
 .uppercase {
 	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
 }
 .normal-case {
 	text-transform: none;
@@ -2209,6 +2229,10 @@ select {
 .text-yellow-500 {
 	--tw-text-opacity: 1;
 	color: rgba(245, 158, 11, var(--tw-text-opacity));
+}
+.text-blue-500 {
+	--tw-text-opacity: 1;
+	color: rgba(59, 130, 246, var(--tw-text-opacity));
 }
 .underline {
 	text-decoration: underline;
@@ -2388,6 +2412,13 @@ select {
 .hover\:text-gray-900:hover {
 	--tw-text-opacity: 1;
 	color: rgba(17, 24, 39, var(--tw-text-opacity));
+}
+.hover\:text-blue-400:hover {
+	--tw-text-opacity: 1;
+	color: rgba(96, 165, 250, var(--tw-text-opacity));
+}
+.hover\:underline:hover {
+	text-decoration: underline;
 }
 .focus\:z-10:focus {
 	z-index: 10;
@@ -2916,6 +2947,16 @@ select {
 		text-align: right;
 	}
 
+	.md\:text-3xl {
+		font-size: 1.875rem;
+		line-height: 2.25rem;
+	}
+
+	.md\:text-sm {
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}
+
 	.md\:leading-normal {
 		line-height: 1.5;
 	}
@@ -2949,6 +2990,16 @@ select {
 	.lg\:mx-0 {
 		margin-left: 0px;
 		margin-right: 0px;
+	}
+
+	.lg\:-mx-6 {
+		margin-left: -1.5rem;
+		margin-right: -1.5rem;
+	}
+
+	.lg\:mx-6 {
+		margin-left: 1.5rem;
+		margin-right: 1.5rem;
 	}
 
 	.lg\:ml-12 {
@@ -2989,6 +3040,10 @@ select {
 
 	.lg\:hidden {
 		display: none;
+	}
+
+	.lg\:h-96 {
+		height: 24rem;
 	}
 
 	.lg\:w-auto {
@@ -3086,6 +3141,11 @@ select {
 	.lg\:text-3xl {
 		font-size: 1.875rem;
 		line-height: 2.25rem;
+	}
+
+	.lg\:text-4xl {
+		font-size: 2.25rem;
+		line-height: 2.5rem;
 	}
 
 	.lg\:leading-normal {
