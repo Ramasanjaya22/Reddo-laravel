@@ -16,9 +16,7 @@
                             {{ auth()->user()->finishedBook()->count() }} Total Buku
                         </p>
                     </div>
-                    <div class="col-span-4 lg:text-right">
-
-                    </div>
+                    @include('components.dashboard.profile')
                 </div>
             </div>
 

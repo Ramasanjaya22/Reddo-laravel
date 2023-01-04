@@ -19,9 +19,7 @@
                         dengan apa yang mau kamu lakukan!
                     </p>
                 </div>
-                <div class="col-span-4 lg:text-right">
-
-                </div>
+                @include('components.dashboard.profile')
             </div>
         </div>
 
