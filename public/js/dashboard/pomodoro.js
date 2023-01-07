@@ -3,7 +3,7 @@ $(document).ready(function () {
     $("#session").html(countS);
     var countB = 5;
     $("#break").html(countB);
-    var pos = "pomodoro";
+    var pos = "Reddo Pomodoro Timer ⏰";
     var countLama;
     var posLama;
     var count;
@@ -18,9 +18,9 @@ $(document).ready(function () {
                     if (pos == "session") {
                         clock.setTime(countB * 60);
                         clock.start();
-                        pos = "break";
+                        pos = "Istirahat!";
                         $("#stats").html(pos);
-                    } else if (pos == "break") {
+                    } else if (pos == "Istirahat!") {
                         clock.setTime(countS * 60);
                         clock.start();
                         pos = "session";
@@ -65,7 +65,7 @@ $(document).ready(function () {
     $("#start").on("click", function () {
         if (count != countS || clock.getTime() == 0) {
             clock.setTime(countS * 60);
-            pos = "session";
+            pos = "📚Reading Time!";
             $("#stats").html(pos);
         } else {
             pos = posLama;
@@ -81,7 +81,7 @@ $(document).ready(function () {
     });
     $("#clear").on("click", function () {
         clock.stop();
-        pos = "pomodoro";
+        pos = "Reddo Pomodoro Timer ⏰";
         $("#stats").html(pos);
         clock.setTime(0);
     });

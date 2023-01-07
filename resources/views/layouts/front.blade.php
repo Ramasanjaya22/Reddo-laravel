@@ -27,6 +27,7 @@
             @stack('before-script')
 
             @include('includes.landing.script')
+            @yield('scripts')
 
             @stack('after-script')
 

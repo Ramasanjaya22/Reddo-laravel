@@ -20,15 +20,12 @@
                 id="menu">
                 <nav
                     class="lg:space-x-12 space-x-0 lg:flex items-center justify-between text-base pt-8 lg:pt-0 lg:space-y-0 space-y-6">
-                    <a href="{{ route('index') }}"
-                        class="block {{ request()->is('/') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Beranda</a>
-                    <a href="{{ route('posts.landing') }}"
-                        class="block {{ request()->is('posts') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Forum</a>
-                    {{-- <a href="{{ route('about.landing') }}" class="block nav-link text-serv-text">Tentang kami</a> --}}
-                    <!-- <a href="#" class="block nav-link text-serv-text">Stories</a>
-                    <a href="#" class="block nav-link text-serv-text">Tips</a> -->
 
                     @auth
+                        <a href="{{ route('index') }}"
+                            class="block {{ request()->is('/') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Beranda</a>
+                        <a href="{{ route('posts.landing') }}" id="forum"
+                            class="block {{ request()->is('posts') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Forum</a>
                         <hr class="block lg:hidden">
                         <a href="{{ route('member.dashboard.index') }}"
                             class="block lg:hidden nav-link text-serv-text">Dashboard</a>

@@ -21,18 +21,18 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|max:255',
-            'body' => 'required',
+            'content' => 'required|max:280',
         ]);
 
         $post = new Post();
         $post->user_id = auth()->id();
-        $post->title = $request->title;
-        $post->body = $request->body;
+        $post->content = $request->input('content');
         $post->save();
 
-        return redirect()->route('pages.landing.posts.index');
+        toast()->success('Update has been success');
+        return back();
     }
+
 
     public function show(Post $post)
     {

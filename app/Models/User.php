@@ -20,6 +20,10 @@ class User extends Authenticatable
     {
         return $this->hasOne("App\Models\Character", 'users_id', 'id');
     }
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 
     public function finishedBook()
     {

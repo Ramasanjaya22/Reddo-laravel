@@ -28,25 +28,16 @@ use Laravel\Socialite\Facades\Socialite;
 */
 
 Route::resource('/', LandingController::class);
-// Route::get('about', [LandingController::class, 'about'])->name('about.landing');
-//Route::get('forum', [LandingController::class, 'forum'])->name('forum.landing');
 //post
 Route::get('posts', [PostController::class, 'index'])->name('posts.landing');
-Route::get('/posts/create', [PostController::class, 'create']);
-Route::post('/posts', [PostController::class, 'store']);
-//community
-//Route::get('communities', 'CommunityController@index');
-// Route::get('/communities/create', 'CommunityController@create');
-// Route::post('/communities', 'CommunityController@store');
-// Route::get('/communities/{id}', 'CommunityController@show');
-// Route::get('/communities/{id}/edit', 'CommunityController@edit');
-// Route::patch('/communities/{id}', 'CommunityController@update');
-// Route::delete('/communities/{id}', 'CommunityController@destroy');
-
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('posts', [PostController::class, 'store'])->name('posts.store');
 
 
 
 Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sanctum', 'verified']], function () {
+
+
 
     // dashboard
     Route::resource('dashboard', MemberController::class);
