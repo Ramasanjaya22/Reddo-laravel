@@ -1,8 +1,8 @@
 <!-- footer -->
-<footer class="footer bg-serv-bg relative py-2">
+<footer class="footer bg-serv-bg relative py-1">
 
-    <div class="mx-auto lg:px-8 md:px-12 px-4 py-4 ">
-        <div class="mt-8 border-t border-serv-border sm:flex justify-between w-100 ">
+    <div class="mx-auto lg:px-8 md:px-12 px-4 ">
+        <div class="mt-2 border-serv-border sm:flex justify-between w-100 ">
             <div class="flex items-left mt-8">
                     <img src="{{ asset('/assets/logo-reddo.svg') }}" alt="logo" />
             </div>

@@ -41,7 +41,6 @@ Route::post('articles', [ArticleController::class, 'store'])->name('articles.sto
 Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sanctum', 'verified']], function () {
 
 
-
     // dashboard
     Route::resource('dashboard', MemberController::class);
 
@@ -54,10 +53,6 @@ Route::group(['prefix' => 'member', 'as' => 'member.', 'middleware' => ['auth:sa
     // reminder
     Route::resource('reminder', ReminderController::class);
     Route::get('create_reminder', [ReminderController::class, 'create'])->name('create.reminder');
-
-    // Route::get('accept/order/{id}', [MyOrderController::class, 'accepted'])->name('accept.order');
-    // Route::get('reject/order/{id}', [MyOrderController::class, 'rejected'])->name('reject.order');
-    // Route::resource('order', MyOrderController::class);
 
     // profile
     Route::get('delete_photo', [ProfileController::class, 'delete'])->name('delete.photo.profile');

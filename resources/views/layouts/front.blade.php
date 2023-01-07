@@ -34,7 +34,8 @@
             {{-- modals --}}
             @include('components.modal.login')
             @include('components.modal.register')
-            @include('components.modal.register-success')
+            @include('components.modal.goals')
+            {{-- @include('components.modal.register-success') --}}
 
         </div>
     </body>

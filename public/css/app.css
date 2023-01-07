@@ -1217,6 +1217,14 @@ select {
 	margin-left: -0.75rem;
 	margin-right: -0.75rem;
 }
+.mx-0 {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.mx-6 {
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+}
 .ml-3 {
 	margin-left: 0.75rem;
 }
@@ -1891,6 +1899,10 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(139, 92, 246, var(--tw-bg-opacity));
 }
+.bg-indigo-700 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(67, 56, 202, var(--tw-bg-opacity));
+}
 .bg-opacity-25 {
 	--tw-bg-opacity: 0.25;
 }
@@ -1899,6 +1911,9 @@ select {
 }
 .bg-cover {
 	background-size: cover;
+}
+.bg-fixed {
+	background-attachment: fixed;
 }
 .bg-center {
 	background-position: center;
@@ -2490,6 +2505,9 @@ select {
 }
 .hover\:underline:hover {
 	text-decoration: underline;
+}
+.hover\:opacity-50:hover {
+	opacity: 0.5;
 }
 .focus\:z-10:focus {
 	z-index: 10;

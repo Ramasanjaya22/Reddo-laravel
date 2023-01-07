@@ -4,11 +4,11 @@
         <div class="border-0 rounded-xl shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
 
             <!--header-->
-            <div class="p-5 rounded-t-xl text-center mt-5 mx-10">
-                <h3 class="text-2xl font-semibold">
+            <div class="p-5 rounded-t-xl text-center mt-2 mx-10">
+                <h3 class="text-2xl font-semibold text-primary">
                     Daftar Akun Baru
                 </h3>
-                <p class="text-gray-400 mt-1 text-sm">
+                <p class="text-gray-400 text-sm">
                 Join dan mulai Tracking bacaanmu
                 </p>
             </div>
@@ -19,7 +19,7 @@
 
                 <!--body-->
                 <div class="relative p-6 flex-auto mx-10">
-                    <div class="mb-4">
+                    <div class="mb-2">
                         <label class="block text-grey-darker text-sm mb-2" for="name">
                             Nama Lengkap
                         </label>
@@ -31,7 +31,7 @@
                         @endif
                     </div>
 
-                    <div class="mb-4">
+                    <div class="mb-2">
                         <label class="block text-grey-darker text-sm mb-2" for="email">
                             Email
                         </label>
@@ -67,20 +67,20 @@
                         @endif
                     </div>
 
-                    <div class="flex items-center justify-between">
+                    {{-- <div class="flex items-center justify-between">
                         <div class="inline-block text-xs text-gray-400">
                             <label class="inline-flex items-center mt-3">
                                 <input type="checkbox" class="form-checkbox h-5 w-5 text-serv-button rounded border-serv-text"><span class="ml-2 text-gray-400">Saya setuju dengan <a href="#" class="text-serv-button">Syarat dan Ketentuan</a></span>
                             </label>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <!--footer-->
-                <div class="px-6 pb-6 rounded-b-xl mx-10">
+                <div class="px-6 pb-2 rounded-b-xl mx-6">
                     <input type="hidden" name="auth" value="true">
 
-                    <button class="block text-center bg-serv-button text-white text-lg py-3 px-12 my-2 rounded-lg w-full">
+                    <button class="block text-center bg-serv-button text-white text-lg py-3 px-12 rounded-lg w-full">
                         Daftar
                     </button>
 

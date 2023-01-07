@@ -32,6 +32,7 @@
                 <div class="w-full lg:w-1/2 text-center lg:justify-start justify-center flex pr-0">
                     <img class="bottom-0 lg:block lg:right-24 md:right-16 sm:right-8 right-8 w-75"
                         src="{{ asset('/assets/hero-image.webp') }}" alt="" />
+
                 </div>
             </div>
         </div>
@@ -39,7 +40,9 @@
         <div class="min-h-screen bg-center bg-no-repeat bg-cover flex justify-center items-center text-center text-neutral-content"
             style="background-image: url(assets/gambar-baca.jpg);">
 
+
             <div class="card rounded-md shadow-lg bg-white mx-auto">
+                
                 <div class="max-w-md p-8">
                     <h1 class="mb-5 text-2xl font-bold text-serv-button">Literasi Membaca di Indonesia</h1>
                     <p class="mb-3 text-serv-button text-sm">
@@ -63,11 +66,11 @@
 
         </div>
 
-        <div class="hero min-h-screen">
+        <div class="min-h-screen flex items-center justify-center bg-primary">
             <div class="text-center">
                 <section>
-                    <h1 class="text-3xl font-bold mb-4 text-serv-button mt-4">Meet Our Team</h1>
-                    <div class="logos flex">
+                    <h1 class="text-2xl font-bold text-serv-button my-4">Meet Our Team</h1>
+                    <div class="logos flex flex-row">
                         <div class="logo">
                             <img src="/assets/profile/rama.jpg" width="100%" alt="" />
                         </div>
@@ -78,18 +81,11 @@
                             <img src="/assets/profile/riki.jpg" width="100%" alt="" />
                         </div>
                     </div>
-                    <h1 class="text-2xl font-bold my-4 mx-auto text-serv-button">Contributor</h1>
-                    <div class="logos flex mx-auto">
-                        <div class="logo">
-                            <img src="/assets/profile/sahlan.jpg" width="100%" alt="" />
-                        </div>
-                    </div>
                 </section>
-
             </div>
         </div>
 
-
+@yield('scripts')
     </div>
 
 

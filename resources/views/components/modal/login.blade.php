@@ -6,7 +6,7 @@
 
             <!--header-->
             <div class="p-5 rounded-t-xl text-center mt-5 mx-10">
-                <h3 class="text-2xl font-semibold">
+                <h3 class="text-2xl font-semibold text-primary">
                     Masuk ke Reddo
                 </h3>
                 <p class="text-gray-400 mt-1 text-sm">
@@ -23,7 +23,7 @@
                     <div class="mb-4">
                         <label class="block text-grey-darker text-sm mb-2" for="email">Email</label>
 
-                        <input name="email" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="email" type="text" placeholder="nama@domain.com" required autofocus>
+                        <input name="email" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="email" type="text" placeholder="nama@email.com" required autofocus>
 
                         @if ($errors->has('email'))
                             <p class="text-red-500 mb-3 text-sm">{{ $errors->first('email') }}</p>
@@ -59,9 +59,9 @@
 
                     <button class="bg-serv-button text-white text-lg py-3 px-12 my-2 rounded-lg w-full" type="submit">Masuk</button>
 
-                    <a href="{{ url('auth/google') }}" class="btn btn-lg btn-danger btn-block">
+                    {{-- <a href="{{ url('auth/google') }}" class="btn btn-lg btn-danger btn-block">
                         <button class="bg-gray-400 text-serv-button text-lg py-3 px-12 my-2 rounded-lg w-full" type="button">Login with Google</button>
-                    </a>
+                    </a> --}}
 
                     <p href="#" class="text-center py-5">
                         Belum punya akun? <a href="#" class="text-serv-button" onclick="toggleModal('loginModal');toggleModal('registerModal') ">Daftar kuy</a>
