@@ -7,7 +7,7 @@
 
 
     <div class="content">
-        <!-- services -->
+        <!-- Postingan -->
         <div class="bg-serv-bg-explore overflow-hidden">
             <div class="pt-16 pb-16 lg:pb-20 lg:px-24 md:px-16 sm:px-8 px-8 mx-auto">
                 <div class="text-center">
@@ -23,11 +23,7 @@
                 <a href="{{ route('posts.create') }}">
                     <button class="bg-serv-button text-white text-lg font-semibold py-4 px-8 my-2 rounded-lg">+ Buat
                         Post</button></a>
-
-
-
-                <!-- component -->
-
+                <!-- component post-->
                 <div class="grid grid-cols-2 gap-2 ">
                     @foreach ($posts as $post)
                         <div
@@ -94,6 +90,7 @@
                 </div>
             </div>
 
+            {{-- ulasan buku --}}
             <div class="lg:pb-20 lg:px-24 md:px-16 sm:px-8 px-8 mx-auto">
                 <div class="text-center">
                     <h1 class="text-3xl font-semibold mb-1">Ulasan Buku 📚</h1>
@@ -101,95 +98,54 @@
                         Ulasan buku, mengulas wawasan, mengulas diri
                     </p>
                 </div>
-                <button class="bg-serv-button text-white text-lg font-semibold py-4 px-8 my-2 rounded-lg">+
-                    Buat
-                    Ulasan</button>
-                <!-- component -->
+                <a href="{{ route('articles.create') }}">
+                    <button class="bg-serv-button text-white text-lg font-semibold py-4 px-8 my-2 rounded-lg">+
+                        Buat
+                        Ulasan</button>
+                </a>
                 <div class="grid grid-cols-1 gap-4">
                     <!-- component -->
-                    <section class="bg-white dark:bg-gray-900 rounded-lg">
-                        <div class="container px-6 py-10 mx-auto ">
-                            <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
-                                <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
-                                    src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"alt="">
+                    @foreach ($articles as $article)
+                        <section class="bg-white dark:bg-gray-900 rounded-lg">
+                            <div class="container px-6 py-10 mx-auto ">
+                                <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
+                                    <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
+                                        src="{{ url(Storage::url($article->image)) }}"alt="">
 
-                                <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
-                                    <p class="text-sm text-blue-500 uppercase">category</p>
 
-                                    <a href="#"
-                                        class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline dark:text-white md:text-3xl">
-                                        All the features you want to know
-                                    </a>
+                                    <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
+                                        <p class="text-sm text-blue-500 uppercase">Review</p>
 
-                                    <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                                        veritatis sint autem
-                                        nesciunt,
-                                        laudantium quia tempore delect
-                                    </p>
+                                        <a href="#"
+                                            class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline dark:text-white md:text-3xl">
+                                            {{ $article->title }}
+                                        </a>
 
-                                    <a href="#"
-                                        class="inline-block mt-2 text-blue-500 underline hover:text-blue-400">Read
-                                        more</a>
+                                        <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
+                                            {{ $article->body }}
+                                        </p>
 
-                                    <div class="flex items-center mt-6">
-                                        <img class="object-cover object-center w-10 h-10 rounded-full"
-                                            src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-                                            alt="">
+                                        <a href="#"
+                                            class="inline-block mt-2 text-blue-500 underline hover:text-blue-400">Read
+                                            more</a>
 
-                                        <div class="mx-4">
-                                            <h1 class="text-sm text-gray-700 dark:text-gray-200">Amelia.
-                                                Anderson</h1>
-                                            <p class="text-sm text-gray-500 dark:text-gray-400">Lead
-                                                Developer</p>
+                                        <div class="flex items-center mt-6">
+                                            <img class="object-cover object-center w-10 h-10 rounded-full"
+                                                src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+                                                alt="">
+
+                                            <div class="mx-4">
+                                                <h1 class="text-sm text-gray-700 dark:text-gray-200">Amelia.
+                                                    Anderson</h1>
+                                                <p class="text-sm text-gray-500 dark:text-gray-400">Lead
+                                                    Developer</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                    <section class="bg-white dark:bg-gray-900 rounded-lg">
-                        <div class="container px-6 py-10 mx-auto ">
-                            <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
-                                <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
-                                    src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"alt="">
-
-                                <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
-                                    <p class="text-sm text-blue-500 uppercase">category</p>
-
-                                    <a href="#"
-                                        class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline dark:text-white md:text-3xl">
-                                        All the features you want to know
-                                    </a>
-
-                                    <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                                        veritatis sint autem
-                                        nesciunt,
-                                        laudantium quia tempore delect
-                                    </p>
-
-                                    <a href="#"
-                                        class="inline-block mt-2 text-blue-500 underline hover:text-blue-400">Read
-                                        more</a>
-
-                                    <div class="flex items-center mt-6">
-                                        <img class="object-cover object-center w-10 h-10 rounded-full"
-                                            src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-                                            alt="">
-
-                                        <div class="mx-4">
-                                            <h1 class="text-sm text-gray-700 dark:text-gray-200">Amelia.
-                                                Anderson</h1>
-                                            <p class="text-sm text-gray-500 dark:text-gray-400">Lead
-                                                Developer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
+                        </section>
+                    @endforeach
                 </div>
 
 

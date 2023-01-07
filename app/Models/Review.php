@@ -9,11 +9,20 @@ class Review extends Model
 {
     use HasFactory;
 
-    public function finishedBook() {
+    protected $guarded = ['id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function finishedBook()
+    {
         return $this->belongsTo(FinishedBook::class);
     }
 
-    public function reviewComment() {
+    public function reviewComment()
+    {
         return $this->hasMany(ReviewComment::class);
     }
 }

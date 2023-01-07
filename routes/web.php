@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Landing\LandingController;
 use App\Http\Controllers\GoogleLoginController;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\ArticleController;
 // member ( dashboard )
 use App\Http\Controllers\Dashboard\MemberController;
 use App\Http\Controllers\Dashboard\LeaderboardController;
@@ -28,10 +28,13 @@ use Laravel\Socialite\Facades\Socialite;
 */
 
 Route::resource('/', LandingController::class);
-//post
+//posts
 Route::get('posts', [PostController::class, 'index'])->name('posts.landing');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('posts', [PostController::class, 'store'])->name('posts.store');
+//articles
+Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
+Route::post('articles', [ArticleController::class, 'store'])->name('articles.store');
 
 
 

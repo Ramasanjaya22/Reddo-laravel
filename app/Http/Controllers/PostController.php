@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,8 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest()->get();
-        return view('pages.landing.posts.index', compact('posts'));
+        $articles = Article::all();
+        return view('pages.landing.posts.index', compact('posts','articles'));
     }
 
     public function create()
