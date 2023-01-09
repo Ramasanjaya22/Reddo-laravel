@@ -31,4 +31,8 @@ class Character extends Model
     public function user() {
         return $this->belongsTo(User::class, 'users_id');
     }
+    public function quest()
+    {
+        return $this->hasOne(Quest::class);
+    }
 }

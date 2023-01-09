@@ -36,7 +36,7 @@
                 </div>
                 <div class="w-full md:w-1/2 p-4">
 
-                    <main class="p-6 lg:col-span-7 md:col-span-12 md:pt-0">
+                    <main class="lg:col-span-7 md:col-span-12 md:pt-0">
                         <div class="sm:grid sm:h-32 sm:grid-flow-row sm:gap-4 sm:grid-cols-3">
                             <div class="flex flex-col justify-center px-4 py-4 mb-4 bg-white rounded-xl">
                                 <div>
@@ -98,109 +98,52 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    <tr class="text-gray-700">
-                                        <td class="w-1/2 px-1 py-2">
-                                            <div class="flex items-center text-sm">
-                                                <div class="relative w-10 h-10 mr-3 rounded-full md:block">
-                                                    <img class="object-cover w-full h-full rounded-full"
-                                                        src="{{ url('https://randomuser.me/api/portraits/men/2.jpg') }}"
-                                                        alt="" loading="lazy" />
-                                                    <div class="absolute inset-0 rounded-full shadow-inner"
-                                                        aria-hidden="true">
+                                    {{-- @foreach ($quests as $quest) --}}
+                                        {{-- <tr class="text-gray-700">
+                                            <td class="w-1/2 px-1 py-2">
+                                                <div class="flex items-center text-sm">
+                                                    <div class="relative w-10 h-10 mr-3 rounded-full md:block">
+                                                        <img class="object-cover w-full h-full rounded-full"
+                                                            src="{{ url('https://randomuser.me/api/portraits/men/3.jpg') }}"
+                                                            alt="" loading="lazy" />
+                                                        <div class="absolute inset-0 rounded-full shadow-inner"
+                                                            aria-hidden="true"></div>
+                                                    </div>
+                                                    <div>
+                                                        <p class="font-medium text-black">{{ $quest['title'] }}</p>
+                                                        <p class="text-sm text-gray-400">{{ $quest['description'] }}</p>
+                                                        <p class="text-sm text-gray-400">{{ $quest['reward'] }}</p>
                                                     </div>
                                                 </div>
-                                                <div>
-                                                    <p class="font-medium text-black">Sarah Roses</p>
-                                                    <p class="text-sm text-gray-400">1 May 2021</p>
+                                            </td>
+                                            <td class="w-1/2 px-1 py-5 text-xs text-right text-red-500">
+                                                @include('components/dashboard.rating')
+                                            </td>
+                                        </tr> --}}
+                                        <tr class="text-gray-700">
+                                            <td class="w-1/2 px-1 py-2">
+                                                <div class="flex items-center text-sm">
+                                                    <div class="relative w-10 h-10 mr-3 rounded-full md:block">
+                                                        <img class="object-cover w-full h-full rounded-full"
+                                                            src="{{ url('https://randomuser.me/api/portraits/men/4.jpg') }}"
+                                                            alt="" loading="lazy" />
+                                                        <div class="absolute inset-0 rounded-full shadow-inner"
+                                                            aria-hidden="true"></div>
+                                                    </div>
+                                                    <div>
+                                                        <p class="font-medium text-black">Sarah Roses</p>
+                                                        <p class="text-sm text-gray-400">1 May 2021</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="w-1/2 px-1 py-5 text-xs text-right text-red-500">
-                                            @include('components/dashboard.rating')
-                                        </td>
-                                    </tr>
-                                    <tr class="text-gray-700">
-                                        <td class="w-1/2 px-1 py-2">
-                                            <div class="flex items-center text-sm">
-                                                <div class="relative w-10 h-10 mr-3 rounded-full md:block">
-                                                    <img class="object-cover w-full h-full rounded-full"
-                                                        src="{{ url('https://randomuser.me/api/portraits/men/3.jpg') }}"
-                                                        alt="" loading="lazy" />
-                                                    <div class="absolute inset-0 rounded-full shadow-inner"
-                                                        aria-hidden="true"></div>
-                                                </div>
-                                                <div>
-                                                    <p class="font-medium text-black">Sarah Roses</p>
-                                                    <p class="text-sm text-gray-400">1 May 2021</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="w-1/2 px-1 py-5 text-xs text-right text-red-500">
-                                            @include('components/dashboard.rating')
-                                        </td>
-                                    </tr>
-                                    <tr class="text-gray-700">
-                                        <td class="w-1/2 px-1 py-2">
-                                            <div class="flex items-center text-sm">
-                                                <div class="relative w-10 h-10 mr-3 rounded-full md:block">
-                                                    <img class="object-cover w-full h-full rounded-full"
-                                                        src="{{ url('https://randomuser.me/api/portraits/men/4.jpg') }}"
-                                                        alt="" loading="lazy" />
-                                                    <div class="absolute inset-0 rounded-full shadow-inner"
-                                                        aria-hidden="true"></div>
-                                                </div>
-                                                <div>
-                                                    <p class="font-medium text-black">Sarah Roses</p>
-                                                    <p class="text-sm text-gray-400">1 May 2021</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="w-1/2 px-1 py-5 text-xs text-right text-red-500">
-                                            @include('components/dashboard.rating')
-                                        </td>
-                                    </tr>
-                                    <tr class="text-gray-700">
-                                        <td class="w-1/2 px-1 py-2">
-                                            <div class="flex items-center text-sm">
-                                                <div class="relative w-10 h-10 mr-3 rounded-full md:block">
-                                                    <img class="object-cover w-full h-full rounded-full"
-                                                        src="{{ url('https://randomuser.me/api/portraits/men/5.jpg') }}"
-                                                        alt="" loading="lazy" />
-                                                    <div class="absolute inset-0 rounded-full shadow-inner"
-                                                        aria-hidden="true"></div>
-                                                </div>
-                                                <div>
-                                                    <p class="font-medium text-black">Sarah Roses</p>
-                                                    <p class="text-sm text-gray-400">1 May 2021</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="w-1/2 px-1 py-5 text-xs text-right text-red-500">
-                                            @include('components/dashboard.rating')
-                                        </td>
-                                    </tr>
-                                    <tr class="text-gray-700">
-                                        <td class="w-1/2 px-1 py-2">
-                                            <div class="flex items-center text-sm">
-                                                <div class="relative w-10 h-10 mr-3 rounded-full md:block">
-                                                    <img class="object-cover w-full h-full rounded-full"
-                                                        src="{{ url('https://randomuser.me/api/portraits/men/6.jpg') }}"
-                                                        alt="" loading="lazy" />
-                                                    <div class="absolute inset-0 rounded-full shadow-inner"
-                                                        aria-hidden="true"></div>
-                                                </div>
-                                                <div>
-                                                    <p class="font-medium text-black">Sarah Roses</p>
-                                                    <p class="text-sm text-gray-400">1 May 2021</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="w-1/2 px-1 py-5 text-xs text-right text-red-500">
-                                            @include('components/dashboard.rating')
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td class="w-1/2 px-1 py-5 text-xs text-right text-red-500">
+                                                @include('components/dashboard.rating')
+                                            </td>
+                                        </tr>
+                                    {{-- @endforeach --}}
 
                                 </tbody>
+
                             </table>
                         </div>
 

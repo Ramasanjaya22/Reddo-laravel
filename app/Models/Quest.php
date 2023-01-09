@@ -9,9 +9,23 @@ class Quest extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    // Kolom-kolom yang dapat diisi secara mass assignment
+    protected $fillable = [
+        'title',
+        'description',
+        'reward',
+    ];
 
-    public function user() {
+    /**
+     * Relasi one-to-one dengan model Character
+     */
+    public function character()
+    {
+        return $this->belongsTo(Character::class);
+    }
+
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 }
