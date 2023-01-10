@@ -27,9 +27,9 @@
                 <div class="grid grid-cols-2 gap-2 ">
                     @foreach ($posts as $post)
                         <div
-                            class=" mx-auto my-auto px-5 py-4 bg-white dark:bg-gray-800 shadow rounded-lg w-full overflow-hidden">
+                            class=" mx-auto my-auto px-5 py-4 bg-white dark:bg-gray-800 shadow rounded-lg w-full">
 
-                            <div class="flex mb-4">
+                            <div class="flex mb-4 justify-between">
                                 @if (auth()->user()->detailUser()->first()->photo != null)
                                     <img src="{{ url(Storage::url($post->user()->detailUser()->photo)) }}"
                                         alt="photo profile" class="w-16 h-16 rounded-full">
@@ -47,9 +47,70 @@
                                     <span
                                         class="block text-sm text-gray-500 dark:text-gray-400 font-light leading-snug">{{ $post->created_at->format('d M Y') }}</span>
                                 </div>
+
+                                <div class="flex justify-self-end align-top">
+
+                                    <td class="text-right">
+                                        <div class="relative inline-block">
+                                            <button class="more-menu-button focus:outline-none">
+                                                <svg class="h-6 w-6 fill-current text-gray-700"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                    <title>More</title>
+                                                    <circle cx="3" cy="10" r="2" />
+                                                    <circle cx="10" cy="10" r="2" />
+                                                    <circle cx="17" cy="10" r="2" />
+                                                </svg>
+                                            </button>
+                                            <div id="moreMenuContent"
+                                                class="more-menu-content absolute mt-2 py-2 w-48 bg-white rounded-md shadow-xl">
+                                                <a href="#"
+                                                    class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                                                    id="editButton">Edit</a>
+                                                <a href="#"
+                                                    class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                                                    id="deleteButton">Delete</a>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    @section('scripts')
+                                        <script>
+                                            const moreMenuButton = document.querySelector('.more-menu-button');
+                                            const moreMenuContent = document.querySelector('#moreMenuContent');
+                                            const editButton = document.querySelector('#editButton');
+                                            const deleteButton = document.querySelector('#deleteButton');
+
+                                            moreMenuButton.addEventListener('click', function() {
+                                                moreMenuContent.classList.toggle('hidden');
+                                            });
+
+                                            editButton.addEventListener('click', function(e) {
+                                                e.preventDefault();
+                                                window.location.href = "{{ route('posts.edit', $post->id) }}";
+                                            });
+
+                                            deleteButton.addEventListener('click', function(e) {
+                                                e.preventDefault();
+                                                if (confirm('Are you sure you want to delete this post?')) {
+                                                    document.querySelector('#deleteForm').submit();
+                                                }
+                                            });
+                                        </script>
+                                    @endsection
+
+                                    <form action="{{ route('posts.delete', $post->id) }}" method="POST" class="d-none"
+                                        id="deleteForm">
+                                        @csrf
+                                        @method('DELETE')
+                                    </form>
+
+                                </div>
+
+
                             </div>
                             <p class="text-gray-800 dark:text-gray-100 leading-snug md:leading-normal">{{ $post->content }}
                             </p>
+
                             <div class="flex justify-between items-center mt-5">
                                 <div class="flex">
                                     <svg class="p-0.5 h-6 w-6 rounded-full z-20 bg-white dark:bg-gray-800 "
@@ -85,6 +146,7 @@
                                 </div>
                                 <div class="ml-1 text-gray-500 dark:text-gray-400 font-light">33 comments</div>
                             </div>
+
                         </div>
                     @endforeach
                 </div>

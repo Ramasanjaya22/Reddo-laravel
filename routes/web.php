@@ -32,6 +32,10 @@ Route::resource('/', LandingController::class);
 Route::get('posts', [PostController::class, 'index'])->name('posts.landing');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('posts', [PostController::class, 'store'])->name('posts.store');
+Route::get('post/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
+// Route::put('posts/{post_id}', [PostController::class, 'update'])->name('posts.update');
+
+Route::delete('post/{id}', [PostController::class, 'destroy'])->name('posts.delete');
 //articles
 Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
 Route::post('articles', [ArticleController::class, 'store'])->name('articles.store');

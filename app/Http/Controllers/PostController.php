@@ -12,7 +12,7 @@ class PostController extends Controller
     {
         $posts = Post::latest()->get();
         $articles = Article::all();
-        return view('pages.landing.posts.index', compact('posts','articles'));
+        return view('pages.landing.posts.index', compact('posts', 'articles'));
     }
 
     public function create()
@@ -60,9 +60,12 @@ class PostController extends Controller
         return redirect()->route('pages.landing.posts.index');
     }
 
-    public function destroy(Post $post)
+    public function destroy($id)
     {
+        $post = Post::findOrFail($id);
         $post->delete();
-        return redirect()->route('pages.landing.posts.index');
+        toast()->success('Delete has been success');
+        return back();
     }
+
 }
